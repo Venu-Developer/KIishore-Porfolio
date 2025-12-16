@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Syne } from "next/font/google";
+
+const syne = Syne({ weight: ["400", "700"], subsets: ["latin"], display: "swap" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,7 +28,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={syne.className}
       >
         {children}
       </body>
