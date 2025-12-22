@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 
 const testimonials = [
   {
@@ -30,13 +30,23 @@ const logos = [
   "/logos/logitech.png",
 ];
 
-export default function Testimonials() {
-  // Variants for animations
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-  };
+// ✅ Correctly typed variants
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.1, 0.25, 1], // ✅ FIXED (no string)
+    },
+  },
+};
 
+export default function Testimonials() {
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-4">
@@ -45,7 +55,10 @@ export default function Testimonials() {
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          transition={{
+            duration: 0.7,
+            ease: [0.25, 0.1, 0.25, 1],
+          }}
           viewport={{ once: true }}
           className="mb-12"
         >
@@ -64,14 +77,20 @@ export default function Testimonials() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
-              className="bg-gray-100 px-6 py-4 rounded-xl shadow-sm"
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 200, damping: 12 }}
+              transition={{
+                type: "spring",
+                stiffness: 200,
+                damping: 12,
+              }}
+              className="bg-gray-100 px-6 py-4 rounded-xl shadow-sm"
             >
               <p className="text-gray-700 text-sm leading-relaxed">
                 “{t.quote}”
               </p>
-              <p className="font-semibold text-sm mt-3 text-black">— {t.author}</p>
+              <p className="font-semibold text-sm mt-3 text-black">
+                — {t.author}
+              </p>
             </motion.div>
           ))}
         </div>
@@ -87,8 +106,8 @@ export default function Testimonials() {
             <motion.div
               key={i}
               variants={fadeUp}
-              className="opacity-70"
               whileHover={{ scale: 1.1 }}
+              className="opacity-70"
             >
               <Image
                 src={logo}

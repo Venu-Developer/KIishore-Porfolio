@@ -1,14 +1,36 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants, easeOut } from "framer-motion";
+
+/* ===================== ANIMATIONS ===================== */
+
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 50,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: easeOut,
+    },
+  },
+};
+
+const staggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+};
+
+/* ===================== COMPONENT ===================== */
 
 export default function Experience() {
-  // Variants for scroll animation
-  const fadeUp = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
-
   return (
     <section className="w-full py-20 px-6 md:px-12 lg:px-20 bg-white">
       <motion.div
@@ -16,10 +38,7 @@ export default function Experience() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}
-        variants={{
-          hidden: {},
-          visible: { transition: { staggerChildren: 0.2 } },
-        }}
+        variants={staggerContainer}
       >
         {/* LEFT SIDE SHAPE */}
         <motion.div
@@ -30,7 +49,7 @@ export default function Experience() {
           <div
             className="bg-gray-200 w-[260px] h-[350px] rounded-[50%] rotate-[-25deg]
                        md:w-[350px] md:h-[450px] lg:w-[400px] lg:h-[500px]"
-          ></div>
+          />
 
           {/* 12+ Badge */}
           <motion.div
@@ -41,7 +60,9 @@ export default function Experience() {
                        rounded-full font-semibold text-lg md:text-xl shadow-lg cursor-pointer"
           >
             12+
-            <span className="text-[10px] md:text-xs font-medium">years exp</span>
+            <span className="text-[10px] md:text-xs font-medium">
+              years exp
+            </span>
           </motion.div>
         </motion.div>
 
@@ -66,10 +87,12 @@ export default function Experience() {
               <h3 className="text-2xl font-bold">08</h3>
               <p className="text-gray-400 text-sm">Years</p>
             </motion.div>
+
             <motion.div variants={fadeUp}>
               <h3 className="text-2xl font-bold">1.2k</h3>
               <p className="text-gray-400 text-sm">Worldwide Client</p>
             </motion.div>
+
             <motion.div variants={fadeUp}>
               <h3 className="text-2xl font-bold">3.5k</h3>
               <p className="text-gray-400 text-sm">Projects Completed</p>

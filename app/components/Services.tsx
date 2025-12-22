@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Variants, easeOut } from "framer-motion";
 import {
   FiArrowUpRight,
   FiSmartphone,
@@ -11,29 +11,46 @@ import {
   FiLayers,
 } from "react-icons/fi";
 
-export default function Services() {
-  const specialties = [
-    { title: "Mobile Apps design", icon: <FiSmartphone /> },
-    { title: "UI/UX design", icon: <FiMonitor /> },
-    { title: "Website design", icon: <FiGlobe /> },
-    { title: "Webflow development", icon: <FiCode /> },
-    { title: "Brand identity", icon: <FiImage /> },
-    { title: "Interaction design", icon: <FiLayers /> },
-  ];
+/* ===================== DATA ===================== */
 
-  // Animation Variants
-  const fadeUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: "easeOut" } },
-  };
+const specialties = [
+  { title: "Mobile Apps design", icon: <FiSmartphone /> },
+  { title: "UI/UX design", icon: <FiMonitor /> },
+  { title: "Website design", icon: <FiGlobe /> },
+  { title: "Webflow development", icon: <FiCode /> },
+  { title: "Brand identity", icon: <FiImage /> },
+  { title: "Interaction design", icon: <FiLayers /> },
+];
 
-  const container = {
-    hidden: {},
-    visible: {
-      transition: { staggerChildren: 0.15 },
+/* ===================== ANIMATIONS ===================== */
+
+const fadeUp: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 60,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: easeOut,
     },
-  };
+  },
+};
 
+const container: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.15,
+    },
+  },
+};
+
+/* ===================== COMPONENT ===================== */
+
+export default function Services() {
   return (
     <section
       id="services"
@@ -55,7 +72,7 @@ export default function Services() {
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-black relative z-10">
               My specialties
             </h2>
-            <span className="absolute top-4 left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[#F9B233] rounded-full -z-10 opacity-80"></span>
+            <span className="absolute top-4 left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[#F9B233] rounded-full -z-10 opacity-80" />
           </div>
         </motion.div>
 
@@ -77,7 +94,7 @@ export default function Services() {
         viewport={{ once: true, amount: 0.2 }}
         variants={container}
       >
-        {/* Left 6 Cards */}
+        {/* Left Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:col-span-2">
           {specialties.map((item, i) => (
             <motion.div
@@ -94,12 +111,12 @@ export default function Services() {
                          cursor-pointer overflow-hidden group border
                          border-transparent hover:border-orange-400 duration-300"
             >
-              {/* Shine effect */}
+              {/* Shine */}
               <span
                 className="absolute inset-0 bg-gradient-to-r from-transparent via-white/40 to-transparent
                            opacity-0 group-hover:opacity-80 translate-x-[-100%] 
                            group-hover:translate-x-[200%] transition-all duration-[900ms]"
-              ></span>
+              />
 
               {/* Icon */}
               <motion.div
@@ -111,9 +128,11 @@ export default function Services() {
                 {item.icon}
               </motion.div>
 
-              {/* Title + Arrow */}
+              {/* Title */}
               <div className="flex justify-between items-start mt-4">
-                <p className="text-lg font-semibold text-black">{item.title}</p>
+                <p className="text-lg font-semibold text-black">
+                  {item.title}
+                </p>
                 <FiArrowUpRight className="text-gray-500 text-xl group-hover:text-orange-500 transition" />
               </div>
             </motion.div>
@@ -130,8 +149,12 @@ export default function Services() {
           <FiArrowUpRight className="text-3xl text-orange-400 self-end" />
 
           <div className="mt-10">
-            <p className="text-orange-400 text-sm uppercase mb-1">Say Hello!</p>
-            <h3 className="text-2xl font-bold break-all">hello@henry.com</h3>
+            <p className="text-orange-400 text-sm uppercase mb-1">
+              Say Hello!
+            </p>
+            <h3 className="text-2xl font-bold break-all">
+              hello@henry.com
+            </h3>
           </div>
         </motion.div>
       </motion.div>

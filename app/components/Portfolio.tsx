@@ -2,49 +2,70 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, type Variants, easeOut } from "framer-motion";
+
+type Project = {
+  id: number;
+  title: string;
+  tags: string[];
+  image: string;
+  link: string;
+};
+
+const projects: Project[] = [
+  {
+    id: 1,
+    title: "Basinik Finance App",
+    tags: ["APP", "DEVELOPMENT"],
+    image: "/projects/finance-app.jpg",
+    link: "https://example.com/project1",
+  },
+  {
+    id: 2,
+    title: "Oxilex Dashboard Design",
+    tags: ["APP", "DEVELOPMENT"],
+    image: "/projects/dashboard-design.jpg",
+    link: "https://example.com/project2",
+  },
+  {
+    id: 3,
+    title: "E-commerce Mobile App",
+    tags: ["UI/UX", "APP"],
+    image: "/projects/ecommerce-app.jpg",
+    link: "https://example.com/project3",
+  },
+  {
+    id: 4,
+    title: "Marketing Website Redesign",
+    tags: ["WEB", "DEVELOPMENT"],
+    image: "/projects/website-redesign.png",
+    link: "https://example.com/project4",
+  },
+];
+
+/* ===================== ANIMATION ===================== */
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 30,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: easeOut,
+    },
+  },
+};
+
+/* ===================== COMPONENT ===================== */
 
 export default function Portfolio() {
   const [showAll, setShowAll] = useState(false);
 
-  const projects = [
-    {
-      id: 1,
-      title: "Basinik Finance App",
-      tags: ["APP", "DEVELOPMENT"],
-      image: "/projects/finance-app.jpg",
-      link: "https://example.com/project1",
-    },
-    {
-      id: 2,
-      title: "Oxilex Dashboard Design",
-      tags: ["APP", "DEVELOPMENT"],
-      image: "/projects/dashboard-design.jpg",
-      link: "https://example.com/project2",
-    },
-    {
-      id: 3,
-      title: "E-commerce Mobile App",
-      tags: ["UI/UX", "APP"],
-      image: "/projects/ecommerce-app.jpg",
-      link: "https://example.com/project3",
-    },
-    {
-      id: 4,
-      title: "Marketing Website Redesign",
-      tags: ["WEB", "DEVELOPMENT"],
-      image: "/projects/website-redesign.png",
-      link: "https://example.com/project4",
-    },
-  ];
-
   const visibleProjects = showAll ? projects : projects.slice(0, 2);
-
-  // Animation variants
-  const cardVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
-  };
 
   return (
     <section className="bg-[#F6DCC8] py-20">
@@ -52,6 +73,7 @@ export default function Portfolio() {
         {/* Title */}
         <div className="text-center mb-10">
           <p className="text-orange-600 font-medium">Portfolio</p>
+
           <h2 className="text-5xl font-bold text-black">
             My recent{" "}
             <span className="relative inline-block">
@@ -69,6 +91,7 @@ export default function Portfolio() {
               key={project.id}
               href={project.link}
               target="_blank"
+              rel="noopener noreferrer"
               className="group flex flex-col"
               initial="hidden"
               whileInView="visible"
@@ -91,7 +114,7 @@ export default function Portfolio() {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="text-xs px-3 py-1 border border-black-300 rounded-full text-black"
+                    className="text-xs px-3 py-1 border border-gray-400 rounded-full text-black"
                   >
                     {tag}
                   </span>
