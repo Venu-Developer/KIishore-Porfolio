@@ -59,7 +59,7 @@ export default function Experience() {
                        w-20 h-20 md:w-24 md:h-24 flex flex-col justify-center items-center 
                        rounded-full font-semibold text-lg md:text-xl shadow-lg cursor-pointer"
           >
-            12+
+            2+
             <span className="text-[10px] md:text-xs font-medium">
               years exp
             </span>
@@ -73,29 +73,29 @@ export default function Experience() {
         >
           <div className="text-black">
             <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-              Mark Henry, <br />
-              Product Designer
+              I Don’t Just Create Content, <br />
+              I Build Brands People Remember
             </h2>
             <p className="text-gray-500 mt-2 text-lg">
-              Based in Germany
+              I’m Kishore Kumar — a brand strategist and creative professional helping businesses stand out with cinematic storytelling, sharp strategy, and performance-focused content. If your brand feels invisible, I help make it impossible to ignore.
             </p>
           </div>
 
           {/* Stats */}
           <div className="grid grid-cols-3 gap-5 text-center md:text-left">
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">08</h3>
-              <p className="text-gray-400 text-sm">Years</p>
+              <h3 className="text-2xl font-bold">2M+</h3>
+              <p className="text-gray-400 text-sm">Content Views</p>
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">1.2k</h3>
-              <p className="text-gray-400 text-sm">Worldwide Client</p>
+              <h3 className="text-2xl font-bold">5</h3>
+              <p className="text-gray-400 text-sm">Brand Success Stories</p>
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">3.5k</h3>
-              <p className="text-gray-400 text-sm">Projects Completed</p>
+              <h3 className="text-2xl font-bold">100+</h3>
+              <p className="text-gray-400 text-sm">Scripts Written</p>
             </motion.div>
           </div>
 

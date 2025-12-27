@@ -8,41 +8,51 @@ import { motion, type Variants, easeOut } from "framer-motion";
 const resumeData = {
   about: {
     title: "About Me",
-    content: `
-Mark Henry, Product Designer based in Germany.
-Lover of words, crafting copy that reflects identity and purpose.
-Creating communication that resonates and connects.
-    `,
+    content: `I began my creative journey on Tamil film sets, not in an office. As an Assistant Director, my days revolved around scripts, retakes, and late-night discussions about details most people never notice. That world trained my eye to read emotion, tension, and the unspoken questions in the audience’s mind.
+
+Cinema taught me a simple, brutal truth: if a frame does not have a reason, it does not deserve to exist. That lesson stayed with me.
+
+When I moved into branding and digital marketing, it didn’t feel like a career shift—just the same storytelling on a different screen. Now the scenes are brand pages, campaigns, and content. The audience is a customer with limited attention, and the story carries the responsibility to build trust and drive action.
+
+For over two years, I’ve worked as a Brand Strategist and Digital Marketer at the intersection of story and strategy. I don’t chase noise for views; I focus on clarity, consistency, and creativity—because whether it’s films or brands, the goal is the same: to leave a feeling that stays after the screen goes dark.`,
   },
+
   experience: {
-    title: "Experience",
+    title: "On Time Delivery",
     content: `
-Over 12+ years of product design experience across multiple industries.
-Building user-centered solutions with functional design systems.
+I plan every project with clear timelines, realistic milestones, and structured workflows. From concept to execution, I ensure deliverables are completed on schedule without compromising creative quality. Consistency and reliability are core to how I work.
     `,
   },
+
   education: {
-    title: "Education",
+    title: "Strategic Thinking",
     content: `
-Bachelor in Product Design, Berlin Design School.
-Certified UX & Interaction Designer.
+I approach every campaign and piece of content with a strategic lens—understanding the brand objective, audience psychology, and long-term impact. Every creative decision is backed by intent, insight, and measurable purpose.
     `,
   },
+
   skills: {
-    title: "Skills",
+    title: "Clean Communication",
     content: `
-UX Design, UI Design, Wireframing, Prototyping,
-Branding, User Research, Visual Design.
+I believe strong ideas deserve clear communication. I maintain transparent discussions with clients and teams, translate complex ideas into simple narratives, and ensure alignment at every stage of execution.
     `,
   },
+
   awards: {
-    title: "Awards",
+    title: "Creative Execution",
     content: `
-Best Product Designer Award – 2021.
-German UX Innovation Award – 2023.
+From scripting reels to building brand narratives, I transform ideas into compelling visual and written content. My execution balances creativity with structure, ensuring every output serves both emotion and strategy.
+    `,
+  },
+
+  Quality: {
+    title: "Quality First",
+    content: `
+Quality is never an afterthought. I focus on detail, consistency, and refinement across all deliverables—because strong brands are built not on volume, but on thoughtful, well-crafted work.
     `,
   },
 };
+
 
 type ResumeKey = keyof typeof resumeData;
 
@@ -72,11 +82,12 @@ export default function Aboutme() {
     <div className="w-full py-20 px-5 sm:px-8 md:px-12 lg:px-20 bg-white">
       {/* Heading */}
       <div className="mb-10">
-        <p className="text-orange-500 font-semibold">About Me</p>
+        <p className="text-orange-500 font-semibold">What You Can 
+</p>
 
         <div className="relative inline-block mt-2">
           <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-black relative z-10">
-            My Journey
+            Expect From Me
           </h2>
           <span className="absolute top-4 left-4 w-16 h-16 sm:w-20 sm:h-20 bg-[#F9B233] rounded-full -z-10 opacity-80"></span>
         </div>

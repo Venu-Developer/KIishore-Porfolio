@@ -1,26 +1,36 @@
 "use client";
 
 import { motion, type Variants, easeOut } from "framer-motion";
+import { FileEdit, FileSearch } from "lucide-react";
+import {
+  FiTrendingUp,
+  FiEdit3,
+  FiType,
+  FiVideo,
+  FiCompass,
+  FiInstagram,
+  FiSearch,
+  FiBookOpen,
+} from "react-icons/fi";
 import {
   FiArrowUpRight,
-  FiSmartphone,
-  FiMonitor,
-  FiGlobe,
-  FiCode,
-  FiImage,
-  FiLayers,
+ 
 } from "react-icons/fi";
+const specialties = [
+  { title: "Content Marketing", icon: <FiTrendingUp /> },
+  { title: "Content Writing", icon: <FiEdit3 /> },
+  { title: "Copywriting", icon: <FiType /> },
+  { title: "Script & Reel Script Writing", icon: <FiVideo /> },
+  { title: "Creative Direction", icon: <FiCompass /> },
+  { title: "Social Media Marketing", icon: <FiInstagram /> },
+  { title: "Search Engine Optimization (SEO)", icon: <FiSearch /> },
+  { title: "Blog Writing", icon: <FiBookOpen /> },
+];
 
 /* ===================== DATA ===================== */
 
-const specialties = [
-  { title: "Mobile Apps design", icon: <FiSmartphone /> },
-  { title: "UI/UX design", icon: <FiMonitor /> },
-  { title: "Website design", icon: <FiGlobe /> },
-  { title: "Webflow development", icon: <FiCode /> },
-  { title: "Brand identity", icon: <FiImage /> },
-  { title: "Interaction design", icon: <FiLayers /> },
-];
+
+
 
 /* ===================== ANIMATIONS ===================== */
 
@@ -79,9 +89,7 @@ export default function Services() {
         {/* Right Text */}
         <motion.div variants={fadeUp} className="w-full md:w-1/2">
           <p className="text-[#08080899] mt-4">
-            Synergistically seize front-end methods of empowerment without
-            extensive core competencies. Progressively repurpose alternative
-            platforms.
+          Clients trust these my specialized skills.
           </p>
         </motion.div>
       </motion.div>
@@ -153,7 +161,7 @@ export default function Services() {
               Say Hello!
             </p>
             <h3 className="text-2xl font-bold break-all">
-              hello@henry.com
+              kishore.dmme@gmail.com
             </h3>
           </div>
         </motion.div>

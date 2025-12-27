@@ -149,7 +149,7 @@ export default function Hero() {
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="w-full md:w-1/2 flex justify-center items-center"
+        className="w-full md:w-1/2 flex justify-center items-center p-5"
       >
         <div className="z-[5] text-center md:text-left">
 
@@ -202,7 +202,7 @@ export default function Hero() {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="mt-6 text-2xl text-gray-700 font-medium sm:text-xl"
           >
-            Product Designer | Based in Germany
+            Brand Strategist | Based in Germany |Cinematic Storyteller | Ad Filmmaker | Digital Marketer
           </motion.p>
 
           {/* Buttons */}
@@ -213,7 +213,7 @@ export default function Hero() {
             className="mt-10 flex gap-6 justify-center md:justify-start flex-wrap"
           >
             <button className="bg-black text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90">
-              Let’s Talk →
+            Let’s Work Together →
             </button>
 
             <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition">
