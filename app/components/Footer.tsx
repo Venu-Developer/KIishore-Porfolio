@@ -100,8 +100,11 @@
 
 "use client";
 
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import emailjs from "@emailjs/browser";
 
 const oneLookDetails = [
   { label: "Name", value: "Kishore Kumar" },
@@ -115,120 +118,214 @@ const oneLookDetails = [
   { label: "Language", value: "English, Tamil" },
 ];
 
-export default function Footer() {
-  return (
-    <footer className="bg-black text-white pt-24 pb-12 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6">
+export default function ContactPage() {
+  const form = useRef<HTMLFormElement>(null);
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
 
-        {/* ================= HEADING ================= */}
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!form.current) return;
+    setLoading(true);
+
+    emailjs
+      .sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        form.current,
+        "YOUR_PUBLIC_KEY"
+      )
+      .then(
+        () => {
+          setLoading(false);
+          setSuccess(true);
+          form.current?.reset();
+        },
+        (error) => {
+          console.error(error.text);
+          setLoading(false);
+          setSuccess(false);
+        }
+      );
+  };
+
+  return (
+    <section className="bg-black text-white min-h-screen py-24 px-6">
+      <div className="max-w-7xl mx-auto space-y-24">
+
+        {/* ================= Layer 1: One Look Details ================= */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mb-20"
+          className="w-full"
         >
-          <h2 className="text-5xl font-semibold mb-4">
-            Let’s work together
-          </h2>
-          <p className="text-gray-400">
-            Based in India | LinkedIn
-          </p>
+          <h3 className="text-3xl font-semibold mb-8 text-orange-400 text-center">
+            Kishore in One Look
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+            {oneLookDetails.map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                className="border-b border-gray-700 pb-4"
+              >
+                <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">
+                  {item.label}
+                </p>
+                <p className="text-lg font-medium">{item.value}</p>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
 
-        {/* ================= CONTACT CARDS ================= */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-24">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="border border-gray-700 rounded-2xl p-8 hover:scale-105 transition"
-          >
-            <p className="text-gray-400 mb-4">
-              Looking for a brand strategist and creative partner?
-            </p>
-            <div className="flex justify-between items-center">
-              <p className="text-orange-400 font-medium">
-                kishore.dmme@gmail.com
-              </p>
-              <ArrowUpRight />
-            </div>
-          </motion.div>
+        {/* ================= Layer 2: Contact Cards + Form ================= */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-10">
 
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="border border-gray-700 rounded-2xl p-8 hover:scale-105 transition"
-          >
-            <p className="text-gray-400 mb-4">
-              Want to discuss a project or idea?
-            </p>
-            <div className="flex justify-between items-center">
-              <p className="text-orange-400 font-medium">
-                +91-99445 13575
-              </p>
-              <ArrowUpRight />
-            </div>
-          </motion.div>
-        </div>
+  {/* ================= Left: Contact Cards ================= */}
+  <div className="space-y-6">
 
-        {/* ================= ONE LOOK DETAILS ================= */}
-        <motion.h3
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-3xl font-semibold mb-10"
+    {/* Card 1 */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6 }}
+      className="border border-gray-700 rounded-2xl p-8 hover:scale-105 transition h-44 flex flex-col justify-center"
+    >
+      <p className="text-gray-400 mb-2 text-center md:text-left">
+        Looking for a brand strategist and creative partner?
+      </p>
+      <div className="flex justify-center md:justify-between items-center mt-2">
+        <p className="text-orange-400 font-medium text-center md:text-left">
+          kishore.dmme@gmail.com
+        </p>
+        <ArrowUpRight className="hidden md:block" />
+      </div>
+    </motion.div>
+
+    {/* Card 2 */}
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: 0.2 }}
+      className="border border-gray-700 rounded-2xl p-8 hover:scale-105 transition h-44 flex flex-col justify-center"
+    >
+      <p className="text-gray-400 mb-2 text-center md:text-left">
+        Want to discuss a project or idea?
+      </p>
+      <div className="flex justify-center md:justify-between items-center mt-2">
+        <p className="text-orange-400 font-medium text-center md:text-left">
+          +91-99445 13575
+        </p>
+        <ArrowUpRight className="hidden md:block" />
+      </div>
+    </motion.div>
+
+  </div>
+
+  {/* ================= Right: Contact Form ================= */}
+  <motion.div
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true }}
+    transition={{ duration: 0.6, delay: 0.4 }}
+    className="bg-gray-900 rounded-2xl p-8"
+  >
+    <h3 className="text-3xl font-semibold mb-6 text-orange-400 text-center">
+      Contact Form
+    </h3>
+    <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+      <input
+        type="text"
+        name="name"
+        placeholder="Your Name"
+        required
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500"
+      />
+      <input
+        type="email"
+        name="email"
+        placeholder="Your Email"
+        required
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500"
+      />
+      <input
+        type="text"
+        name="subject"
+        placeholder="Subject"
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500"
+      />
+      <textarea
+        name="message"
+        placeholder="Your Message"
+        rows={5}
+        required
+        className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500 resize-none"
+      />
+      <div className="text-center">
+        <button
+          type="submit"
+          disabled={loading}
+          className={`px-10 py-4 font-semibold rounded-xl transition ${
+            loading ? "bg-gray-600 cursor-not-allowed" : "bg-orange-500 hover:bg-orange-600 text-black"
+          } inline-flex items-center gap-2`}
         >
-          Kishore in One Look
-        </motion.h3>
+          {loading ? "Sending..." : "Send Message"}
+          <ArrowUpRight />
+        </button>
+      </div>
+      {success && (
+        <p className="text-center text-green-400 mt-2">
+          Thank you! Your message has been sent.
+        </p>
+      )}
+    </form>
+  </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-6 mb-24">
-          {oneLookDetails.map((item, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.05 }}
-              className="border-b border-gray-700 pb-4"
-            >
-              <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">
-                {item.label}
-              </p>
-              <p className="text-lg font-medium">
-                {item.value}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+</div>
 
-        {/* ================= BIG NAME ================= */}
-        <motion.h1
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-          className="text-[70px] md:text-[110px] font-extrabold text-center text-[#f2d8c7]"
-        >
-          KISHORE KUMAR
-        </motion.h1>
 
-        <hr className="border-gray-700 my-10" />
+        {/* ================= Layer 3: Big Name + Socials ================= */}
+        <div className="text-center mt-24 space-y-6">
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="text-[70px] md:text-[110px] font-extrabold text-[#f2d8c7]"
+          >
+            KISHORE KUMAR
+          </motion.h1>
 
-        {/* ================= BOTTOM ================= */}
-        <div className="flex flex-col md:flex-row justify-between text-gray-400 text-sm">
-          <p>©2025 Kishore Kumar. All Rights Reserved</p>
-          <a href="#" className="flex items-center gap-1 hover:text-white mt-4 md:mt-0">
-            Back to Top <ArrowUpRight size={14} />
-          </a>
+          <div className="flex justify-center items-center gap-6 text-gray-400">
+            <a href="https://github.com/YOUR_GITHUB" target="_blank" rel="noreferrer" className="hover:text-white transition">
+              <FaGithub size={28} />
+            </a>
+            <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noreferrer" className="hover:text-white transition">
+              <FaLinkedin size={28} />
+            </a>
+          </div>
+
+          <hr className="border-gray-700 my-10" />
+
+          <div className="flex flex-col md:flex-row justify-between text-gray-400 text-sm">
+            <p>©2025 Kishore Kumar. All Rights Reserved</p>
+            <a href="#" className="flex items-center gap-1 hover:text-white mt-4 md:mt-0 justify-center md:justify-start">
+              Back to Top <ArrowUpRight size={14} />
+            </a>
+          </div>
         </div>
 
       </div>
-    </footer>
+    </section>
   );
 }
+
+
 

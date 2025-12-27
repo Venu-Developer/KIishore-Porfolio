@@ -62,7 +62,7 @@ export default function Testimonials() {
           viewport={{ once: true }}
           className="mb-12"
         >
-          <p className="text-orange-500 font-semibold">Testimonial</p>
+          <p className="text-orange-500 font-semibold text-2xl">Testimonial</p>
           <h2 className="text-4xl md:text-5xl font-bold leading-tight text-black">
             Client feedback
           </h2>
@@ -96,7 +96,7 @@ export default function Testimonials() {
         </div>
 
         {/* Logos */}
-        <motion.div
+        {/* <motion.div
           className="flex flex-wrap justify-center mt-16 gap-12"
           initial="hidden"
           whileInView="visible"
@@ -118,7 +118,7 @@ export default function Testimonials() {
               />
             </motion.div>
           ))}
-        </motion.div>
+        </motion.div> */}
 
       </div>
     </section>

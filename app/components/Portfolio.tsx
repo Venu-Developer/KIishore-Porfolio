@@ -162,6 +162,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { ArrowUpRight, Play } from "lucide-react";
 
 /* ===================== TYPES ===================== */
 
@@ -174,7 +175,7 @@ type Project = {
   content: string;
 };
 
-/* ===================== DATA (HIGHLIGHTS ONLY) ===================== */
+/* ===================== DATA ===================== */
 
 const projects: Project[] = [
   {
@@ -182,21 +183,24 @@ const projects: Project[] = [
     title: "Kadai2Manai Branding",
     type: "image",
     image: "/projects/kadai2manai.jpg",
-    content: `Kadai2Manai, a fresh vegetable brand from Karur, Tamil Nadu that delivers produce to homes on a daily basis, is one of my recent projects. I shaped the brand’s direction, tone, and colour story, then collaborated with a designer who translated those ideas into the logo and visuals you see here.`,
+    content:
+      "Kadai2Manai, a fresh vegetable brand from Karur, Tamil Nadu that delivers produce to homes daily. I shaped the brand’s direction, tone, and colour story, then collaborated with a designer who translated those ideas into the final visuals.",
   },
   {
     id: 2,
     title: "Aryu Academy Scripts",
     type: "image",
     image: "/projects/aryu-academy.jpg",
-    content: `For Aryu Academy, Chennai, India I’ve written over 100 scripts as part of a long-term content partnership. From that work, this is one of the strongest one-month sets: 15 Tanglish educational scripts that helped their videos grow from 50K views to over 500K views.`,
+    content:
+      "For Aryu Academy, Chennai, I’ve written 100+ scripts as part of a long-term content partnership. One strong month included 15 Tanglish scripts that helped videos grow from 50K to 500K+ views.",
   },
   {
     id: 3,
     title: "Product Film Direction",
     type: "video",
     video: "/projects/product-video.mp4",
-    content: `A recent product video I directed, built like a mini cinematic sequence from my shot ideas and storyboards, then crafted on set together with my cameraman to make the brand feel premium and alive.`,
+    content:
+      "A cinematic product film built from my shot ideas and storyboards, crafted on set with my cameraman to make the brand feel premium and alive.",
   },
 ];
 
@@ -208,23 +212,25 @@ export default function Portfolio() {
       <div className="max-w-[1186px] mx-auto px-5">
 
         {/* HEADING */}
-        <div className="text-center mb-14">
-          <p className="text-orange-600 font-medium mb-2">Portfolio</p>
+        <div className="text-center mb-16">
+          <p className="text-orange-600 font-medium mb-2 text-2xl">Portfolio</p>
           <h2 className="text-5xl font-bold text-black">
             My Recent <span className="text-orange-600">Creative Works</span>
           </h2>
         </div>
 
-        {/* PROJECT GRID */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {projects.map((project) => (
+        {/* GRID */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 place-items-center">
+          {projects.map((project, index) => (
             <motion.div
               key={project.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.6 }}
               viewport={{ once: true }}
-              className="group relative h-[380px] rounded-2xl overflow-hidden cursor-pointer"
+              className={`group relative h-[380px] w-full max-w-[520px] rounded-2xl overflow-hidden cursor-pointer bg-black
+                ${index === projects.length - 1 ? "md:col-span-2 md:flex md:justify-center" : ""}
+              `}
             >
               {/* IMAGE */}
               {project.type === "image" && project.image && (
@@ -232,8 +238,7 @@ export default function Portfolio() {
                   src={project.image}
                   alt={project.title}
                   fill
-                  priority
-                  className="object-cover transition-all duration-500 group-hover:blur-sm group-hover:scale-105"
+                  className="object-cover transition-all duration-700 group-hover:scale-105 group-hover:blur-sm"
                 />
               )}
 
@@ -245,32 +250,40 @@ export default function Portfolio() {
                   loop
                   autoPlay
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover transition-all duration-700 group-hover:blur-sm"
                 />
               )}
 
+              {/* PLAY ICON */}
+              {project.type === "video" && (
+                <div className="absolute inset-0 flex items-center justify-center opacity-100 group-hover:opacity-0 transition">
+                  <div className="bg-white/90 p-4 rounded-full">
+                    <Play className="text-black" />
+                  </div>
+                </div>
+              )}
+
               {/* OVERLAY */}
-              <div className="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                <div className="absolute inset-0 p-6 text-white overflow-y-auto">
-                  <h3 className="text-2xl font-semibold mb-4">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm leading-relaxed opacity-90">
-                    {project.content}
-                  </p>
+              <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+                <div className="p-6 text-center max-h-full overflow-y-auto">
+                  <div className="flex justify-center items-center gap-2 mb-4">
+                    <h3 className="text-2xl font-semibold text-white">{project.title}</h3>
+                    <ArrowUpRight className="text-white" />
+                  </div>
+                  <p className="text-sm text-white/90 leading-relaxed">{project.content}</p>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* VIEW ALL BUTTON */}
-        <div className="text-center mt-16">
+        {/* VIEW ALL */}
+        <div className="text-center mt-20">
           <Link
             href="/portfolio"
-            className="inline-block bg-black text-white px-12 py-4 rounded-md hover:bg-gray-900 transition-all"
+            className="inline-flex items-center gap-2 bg-black text-white px-12 py-4 rounded-md hover:bg-gray-900 transition-all"
           >
-            View All Projects ↗
+            View All Projects <ArrowUpRight size={18} />
           </Link>
         </div>
 

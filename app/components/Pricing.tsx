@@ -95,6 +95,8 @@
 
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
+
 
 interface Plan {
   name: string;
@@ -178,20 +180,26 @@ export default function PricingSection() {
       </div>
 
       {/* ===================== CTA BUTTON ===================== */}
-      <div className="text-center">
-        <button className="px-10 py-4 bg-black text-white rounded-xl text-sm font-medium hover:bg-gray-900 transition inline-flex items-center gap-2">
-          Contact me for the best price
-          <svg
-            width="16"
-            height="16"
-            stroke="white"
-            fill="none"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M13 5l7 7-7 7" strokeWidth="2" />
-          </svg>
-        </button>
-      </div>
+   
+
+<div className="text-center">
+  <Link
+    href="/contact" // your contact page route
+    className="px-10 py-4 bg-black text-white rounded-xl text-sm font-medium hover:bg-gray-900 transition inline-flex items-center gap-2"
+  >
+    Contact me for the best price
+    <svg
+      width="16"
+      height="16"
+      stroke="white"
+      fill="none"
+      viewBox="0 0 24 24"
+    >
+      <path d="M5 12h14M13 5l7 7-7 7" strokeWidth="2" />
+    </svg>
+  </Link>
+</div>
+
 
     </section>
   );

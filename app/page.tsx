@@ -43,9 +43,9 @@ export default function Home() {
       </section>
 
       {/* Blog */}
-      <section id="blog">
+      {/* <section id="blog">
         <Blog />
-      </section>
+      </section> */}
 
       {/* Pricing */}
       <section id="pricing">

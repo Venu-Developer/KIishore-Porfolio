@@ -112,6 +112,8 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import gsap from "gsap";
 import { FaBehance, FaLinkedinIn, FaDribbble, FaGithub } from "react-icons/fa";
+import Link from "next/link";
+
 
 export default function Hero() {
   const circleRef = useRef(null);
@@ -212,13 +214,23 @@ export default function Hero() {
             transition={{ delay: 1.5, duration: 0.8 }}
             className="mt-10 flex gap-6 justify-center md:justify-start flex-wrap"
           >
-            <button className="bg-black text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90">
+            <Link href="/contact">  
+             <button className="bg-black text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90 cursor-pointer">
             Let’s Work Together →
             </button>
-
-            <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition">
+            </Link>
+           
+           <Link
+              key={"#portfolio"}
+              href={"#portfolio"}
+              >
+                <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition cursor-pointer">
               My Work →
             </button>
+              </Link>
+               
+         
+           
           </motion.div>
 
           {/* Stats + Icons */}

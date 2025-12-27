@@ -76,7 +76,7 @@ export default function Services() {
       >
         {/* Left Title */}
         <motion.div variants={fadeUp} className="w-full md:w-1/2 relative">
-          <p className="text-orange-500 font-semibold">Services</p>
+          <p className="text-orange-500 font-semibold text-2xl">Services</p>
 
           <div className="relative inline-block mt-2">
             <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold text-black relative z-10">

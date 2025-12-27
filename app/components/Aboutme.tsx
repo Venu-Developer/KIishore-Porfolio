@@ -82,7 +82,7 @@ export default function Aboutme() {
     <div className="w-full py-20 px-5 sm:px-8 md:px-12 lg:px-20 bg-white">
       {/* Heading */}
       <div className="mb-10">
-        <p className="text-orange-500 font-semibold">What You Can 
+        <p className="text-orange-500 font-semibold text-2xl">What You Can 
 </p>
 
         <div className="relative inline-block mt-2">

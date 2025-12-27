@@ -16,8 +16,8 @@ const syne = Syne({ weight: ["400", "700"], subsets: ["latin"], display: "swap" 
 // });
 
 export const metadata: Metadata = {
-  title: "Kishor Kumar",
-  description: "Kishor Kumar Porfolio",
+  title: "Kishore Kumar",
+  description: "Kishore Kumar Porfolio",
 };
 
 export default function RootLayout({
