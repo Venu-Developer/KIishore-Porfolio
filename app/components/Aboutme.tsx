@@ -6,16 +6,6 @@ import { motion, type Variants, easeOut } from "framer-motion";
 /* ===================== DATA ===================== */
 
 const resumeData = {
-  about: {
-    title: "About Me",
-    content: `I began my creative journey on Tamil film sets, not in an office. As an Assistant Director, my days revolved around scripts, retakes, and late-night discussions about details most people never notice. That world trained my eye to read emotion, tension, and the unspoken questions in the audience’s mind.
-
-Cinema taught me a simple, brutal truth: if a frame does not have a reason, it does not deserve to exist. That lesson stayed with me.
-
-When I moved into branding and digital marketing, it didn’t feel like a career shift—just the same storytelling on a different screen. Now the scenes are brand pages, campaigns, and content. The audience is a customer with limited attention, and the story carries the responsibility to build trust and drive action.
-
-For over two years, I’ve worked as a Brand Strategist and Digital Marketer at the intersection of story and strategy. I don’t chase noise for views; I focus on clarity, consistency, and creativity—because whether it’s films or brands, the goal is the same: to leave a feeling that stays after the screen goes dark.`,
-  },
 
   experience: {
     title: "On Time Delivery",
@@ -76,7 +66,7 @@ const contentVariants: Variants = {
 /* ===================== COMPONENT ===================== */
 
 export default function Aboutme() {
-  const [activeKey, setActiveKey] = useState<ResumeKey>("about");
+  const [activeKey, setActiveKey] = useState<ResumeKey>("experience");
 
   return (
     <div className="w-full py-20 px-5 sm:px-8 md:px-12 lg:px-20 bg-white">

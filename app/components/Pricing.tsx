@@ -115,7 +115,7 @@ export default function PricingSection() {
     <section className="max-w-7xl mx-auto py-20 px-6 md:px-12 lg:px-20 bg-white">
       
       {/* ===================== HEADING ===================== */}
-      <p className="text-orange-500 text-sm font-semibold text-2xl">Pricing</p>
+      <p className="text-orange-500  font-semibold text-2xl">Pricing</p>
 
       <h2 className="text-5xl font-bold leading-tight mt-2 mb-12 text-black">
         Stay chill and

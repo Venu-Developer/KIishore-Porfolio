@@ -84,18 +84,18 @@ export default function Experience() {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-5 text-center md:text-left">
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">2M+</h3>
-              <p className="text-gray-400 text-sm">Content Views</p>
+              <h3 className="text-2xl font-bold text-orange-400">2M+</h3>
+              <p className="text-gray-700 text-sm ">Content Views</p>
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">5</h3>
-              <p className="text-gray-400 text-sm">Brand Success Stories</p>
+              <h3 className="text-2xl font-bold text-orange-400">5</h3>
+              <p className="text-gray-700 text-sm">Brand Success Stories</p>
             </motion.div>
 
             <motion.div variants={fadeUp}>
-              <h3 className="text-2xl font-bold">100+</h3>
-              <p className="text-gray-400 text-sm">Scripts Written</p>
+              <h3 className="text-2xl font-bold  text-orange-400">100+</h3>
+              <p className="text-gray-700 text-sm">Scripts Written</p>
             </motion.div>
           </div>
 
@@ -106,7 +106,7 @@ export default function Experience() {
             transition={{ type: "spring", stiffness: 200, damping: 10 }}
             className="px-6 py-3 bg-black text-white rounded-lg transition-all"
           >
-            Download Resume
+           See My Works
           </motion.button>
         </motion.div>
       </motion.div>

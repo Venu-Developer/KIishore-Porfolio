@@ -10,6 +10,7 @@ import PricingSection from "./components/Pricing";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
+import AboutPage from "./components/About";
 
 export default function Home() {
   return (
@@ -17,45 +18,55 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-      {/* Services Section */}
-      <section id="services">
-        <Services />
-      </section>
+       {/* Services Section */}
+    <section id="services">
+      <Services />
+    </section>
 
-      {/* Experience Section */}
-      <section id="experience">
-        <Experience />
-      </section>
+    {/* About Section */}
+    <section id="about">
+      <AboutPage />
+    </section>
 
-      {/* About Section */}
-      <section id="about">
-        <Aboutme />
-      </section>
+    {/* Experience Section */}
+    <section id="experience">
+      <Experience />
+    </section>
 
-      {/* Portfolio Section */}
-      <section id="portfolio">
-        <Portfolio />
-      </section>
+    {/* Expect From Me Section */}
+    <section id="expect-from-me">
+      <Aboutme />
+    </section>
 
-      {/* Testimonials */}
-      <section id="testimonials">
-        <Testimonials />
-      </section>
+    {/* Achievements Section */}
+    {/* <section id="achievements">
+      <Achievements />
+    </section> */}
 
-      {/* Blog */}
-      {/* <section id="blog">
-        <Blog />
-      </section> */}
+    {/* Portfolio Section */}
+    <section id="portfolio">
+      <Portfolio />
+    </section>
 
-      {/* Pricing */}
-      <section id="pricing">
-        <PricingSection />
-      </section>
+    {/* Testimonials Section */}
+    <section id="testimonials">
+      <Testimonials />
+    </section>
 
-      {/* Contact */}
-      <section id="contact">
-        <Footer />
-      </section>
+    {/* Pricing Section */}
+    <section id="pricing">
+      <PricingSection />
+    </section>
+
+    {/* Blog Section */}
+    {/* <section id="blog">
+      <Blog />
+    </section> */}
+
+    {/* Contact Section */}
+    <section id="contact">
+      <Footer />
+    </section>
     </>
   );
 }

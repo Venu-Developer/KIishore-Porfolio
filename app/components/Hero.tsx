@@ -202,7 +202,7 @@ export default function Hero() {
             transition={{ delay: 1.2, duration: 0.8 }}
             className="mt-6 text-2xl text-gray-700 font-medium sm:text-xl"
           >
-            Brand Strategist | Based in Germany |Cinematic Storyteller | Ad Filmmaker | Digital Marketer
+            Brand Strategist  |Cinematic Storyteller | Ad Filmmaker | Digital Marketer
           </motion.p>
 
           {/* Buttons */}
@@ -236,17 +236,17 @@ export default function Hero() {
             transition={{ delay: 1.8, duration: 0.8 }}
             className="mt-10 flex gap-10 flex-wrap justify-center md:justify-start items-center text-black"
           >
-            <p className="text-3xl font-bold text-center md:text-left">
+            {/* <p className="text-3xl font-bold text-center md:text-left">
               1.2K<span className="text-2xl">+</span>
               <br />
-              <span className="text-sm">Worldwide Clients</span>
-            </p>
+              <span className="text-sm">Worldwide Clients</span> */}
+            {/* </p> */}
 
-            <div className="flex gap-4 items-center text-3xl">
-              <FaBehance className="cursor-pointer hover:text-blue-600 duration-200" />
+            <div className="flex gap-4 items-center text-3xl bg-yellow-400 rounded-full p-3">
+              {/* <FaBehance className="cursor-pointer hover:text-blue-600 duration-200" /> */}
               <FaLinkedinIn className="cursor-pointer hover:text-blue-700 duration-200" />
-              <FaDribbble className="cursor-pointer hover:text-pink-500 duration-200" />
-              <FaGithub className="cursor-pointer hover:text-gray-700 duration-200" />
+              {/* <FaDribbble className="cursor-pointer hover:text-pink-500 duration-200" />
+              <FaGithub className="cursor-pointer hover:text-gray-700 duration-200" /> */}
             </div>
           </motion.div>
 
