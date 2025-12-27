@@ -184,7 +184,7 @@ export default function ContactPage() {
         </motion.div>
 
         {/* ================= Layer 2: Contact Cards + Form ================= */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-3 md:p-10">
 
   {/* ================= Left: Contact Cards ================= */}
   <div className="space-y-6">

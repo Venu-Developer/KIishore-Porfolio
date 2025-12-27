@@ -144,7 +144,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row w-full h-[90vh] md:h-screen bg-[#F7E2D4] px-6 md:px-12 lg:px-2 overflow-hidden">
+    <section className="flex flex-col md:flex-row w-full h-[95vh] md:h-screen bg-[#F7E2D4] px-6 md:px-12 lg:px-2 overflow-hidden">
 
       {/* LEFT SIDE */}
       <motion.div
@@ -163,7 +163,6 @@ export default function Hero() {
           >
             Hello, I’m <span>✌️</span>
           </motion.p>
-
           {/* Name Animation */}
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
@@ -178,7 +177,6 @@ export default function Hero() {
               className="absolute inset-0 -z-[1] bg-[#F9B233] w-16 h-16 rounded-full"
             ></span>
           </motion.div>
-
            <motion.h2 className="text-7xl font-bold text-black flex gap-1">
       {name.split("").map((letter, i) => (
         <motion.span
@@ -229,8 +227,6 @@ export default function Hero() {
             </button>
               </Link>
                
-         
-           
           </motion.div>
 
           {/* Stats + Icons */}
@@ -281,7 +277,7 @@ export default function Hero() {
             absolute font-bold text-[90px] leading-[90px] text-white
             top-[30%] right-[5%] z-[2]
             md:text-[70px] md:leading-[75px]
-            hidden md:block
+            hidden sm:block
           "
         >
           Kishor Kumar
@@ -293,7 +289,7 @@ export default function Hero() {
           className="
             absolute -bottom-8 right-[10%] z-[3]
             w-[250px] sm:w-[300px] md:w-[450px]
-            h-[350px] sm:h-[450px] md:h-[550px]
+            h-[350px] sm:h-[450px] md:h-[550px]  hidden sm:block
           "
         >
           <Image
@@ -301,7 +297,7 @@ export default function Hero() {
             alt="profile"
             width={500}
             height={700}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hidden sm:block"
           />
         </div>
 
