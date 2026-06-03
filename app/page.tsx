@@ -11,6 +11,9 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import AboutPage from "./components/About";
+import FocusSection from "./components/FocusSection";
+import ProjectsSection from "./components/ProjectsSection";
+import ApproachSection from "./components/ApproachSection";
 
 export default function Home() {
   return (
@@ -18,55 +21,70 @@ export default function Home() {
       <Navbar />
       <Hero />
 
-       {/* Services Section */}
-    <section id="services">
-      <Services />
-    </section>
+      {/* Focus Section */}
+      <section id="focus">
+        <FocusSection />
+      </section>
 
-    {/* About Section */}
-    <section id="about">
-      <AboutPage />
-    </section>
+      {/* Projects Section */}
+      <section id="projects">
+        <ProjectsSection />
+      </section>
 
-    {/* Experience Section */}
-    <section id="experience">
-      <Experience />
-    </section>
+      {/* Approach Section */}
+      <section id="approach">
+        <ApproachSection />
+      </section>
 
-    {/* Expect From Me Section */}
-    <section id="expect-from-me">
-      <Aboutme />
-    </section>
+      {/* Services Section */}
+      <section id="services">
+        <Services />
+      </section>
 
-    {/* Achievements Section */}
-    {/* <section id="achievements">
+      {/* About Section */}
+      <section id="about">
+        <AboutPage />
+      </section>
+
+      {/* Experience Section */}
+      <section id="experience">
+        <Experience />
+      </section>
+
+      {/* Expect From Me Section */}
+      <section id="expect-from-me">
+        <Aboutme />
+      </section>
+
+      {/* Achievements Section */}
+      {/* <section id="achievements">
       <Achievements />
     </section> */}
 
-    {/* Portfolio Section */}
-    <section id="portfolio">
-      <Portfolio />
-    </section>
+      {/* Portfolio Section */}
+      <section id="portfolio">
+        <Portfolio />
+      </section>
 
-    {/* Testimonials Section */}
-    <section id="testimonials">
-      <Testimonials />
-    </section>
+      {/* Testimonials Section */}
+      <section id="testimonials">
+        <Testimonials />
+      </section>
 
-    {/* Pricing Section */}
-    <section id="pricing">
-      <PricingSection />
-    </section>
+      {/* Pricing Section */}
+      <section id="pricing">
+        <PricingSection />
+      </section>
 
-    {/* Blog Section */}
-    {/* <section id="blog">
+      {/* Blog Section */}
+      {/* <section id="blog">
       <Blog />
     </section> */}
 
-    {/* Contact Section */}
-    <section id="contact">
-      <Footer />
-    </section>
+      {/* Contact Section */}
+      <section id="contact">
+        <Footer />
+      </section>
     </>
   );
 }

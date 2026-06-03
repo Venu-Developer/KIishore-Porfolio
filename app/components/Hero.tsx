@@ -6,11 +6,11 @@
 // export default function Hero() {
 //   return (
 //     <section className="flex flex-col md:flex-row w-full h-[90vh] md:h-screen bg-[#F7E2D4]  px-6 md:px-12 lg:px-2 overflow-hidden">
-      
+
 //       {/* LEFT SIDE */}
 //       <div className="w-full md:w-1/2 h-auto flex justify-center items-center">
 //         <div className="z-[5] text-center md:text-left">
-          
+
 //           <p className="text-3xl font-medium text-gray-900">
 //             Hello, I’m <span>✌️</span>
 //           </p>
@@ -60,7 +60,7 @@
 
 //       {/* RIGHT SIDE */}
 //       <div className="relative w-full h-full md:w-1/2 ">
-        
+
 //         {/* Yellow Shape */}
 //         <div
 //           className="
@@ -113,7 +113,10 @@ import { motion } from "framer-motion";
 import gsap from "gsap";
 import { FaBehance, FaLinkedinIn, FaDribbble, FaGithub } from "react-icons/fa";
 import Link from "next/link";
+import portfolioData from "../../data/portfolio.json";
+import { HeroData } from "../../types/portfolio";
 
+const data: HeroData = portfolioData.hero;
 
 export default function Hero() {
   const circleRef = useRef(null);
@@ -136,7 +139,7 @@ export default function Hero() {
       ease: "power1.inOut",
     });
   }, []);
- const name = "Kumar";
+  const name = data.lastName;
 
   const letterAnimation = {
     initial: { opacity: 0, y: -20 },
@@ -158,10 +161,10 @@ export default function Hero() {
           <motion.p
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay:0.1, duration:1 }}
+            transition={{ delay: 0.1, duration: 1 }}
             className="text-3xl font-medium text-gray-900"
           >
-            Hello, I’m <span>✌️</span>
+            {data.greeting}
           </motion.p>
           {/* Name Animation */}
           <motion.div
@@ -170,39 +173,39 @@ export default function Hero() {
             transition={{ delay: 0.6, duration: 0.8 }}
             className="relative inline-block"
           >
-            <h2 className="text-7xl font-bold text-black relative z-[2]">
-              Kishore
+            <h2 className="text-7xl font-bold text-[#292929] relative z-[2]">
+              {data.firstName}
             </h2>
             <span
               className="absolute inset-0 -z-[1] bg-[#F9B233] w-16 h-16 rounded-full"
             ></span>
           </motion.div>
-           <motion.h2 className="text-7xl font-bold text-black flex gap-1">
-      {name.split("").map((letter, i) => (
-        <motion.span
-          key={i}
-          variants={letterAnimation}
-          initial="initial"
-          animate="animate"
-          transition={{
-            delay: i * 0.2, // stagger effect
-            duration: 0.6,
-            repeat: Infinity,
-            repeatType: "mirror", // appear → disappear → appear
-          }}
-        >
-          {letter}
-        </motion.span>
-      ))}
-    </motion.h2>
+          <motion.h2 className="text-7xl font-bold text-[#292929] flex gap-1">
+            {name.split("").map((letter, i) => (
+              <motion.span
+                key={i}
+                variants={letterAnimation}
+                initial="initial"
+                animate="animate"
+                transition={{
+                  delay: i * 0.2, // stagger effect
+                  duration: 0.6,
+                  repeat: Infinity,
+                  repeatType: "mirror", // appear → disappear → appear
+                }}
+              >
+                {letter}
+              </motion.span>
+            ))}
+          </motion.h2>
 
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-6 text-2xl text-gray-700 font-medium sm:text-xl"
+            className="mt-6 text-2xl text-gray-700 font-medium sm:text-xl whitespace-pre-line"
           >
-            Brand Strategist  |Cinematic Storyteller | Ad Filmmaker | Digital Marketer
+            {data.roles}
           </motion.p>
 
           {/* Buttons */}
@@ -212,21 +215,22 @@ export default function Hero() {
             transition={{ delay: 1.5, duration: 0.8 }}
             className="mt-10 flex gap-6 justify-center md:justify-start flex-wrap"
           >
-            <Link href="/contact">  
-             <button className="bg-black text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90 cursor-pointer">
-            Let’s Work Together →
-            </button>
-            </Link>
-           
-           <Link
-              key={"#portfolio"}
-              href={"#portfolio"}
-              >
-                <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition cursor-pointer">
-              My Work →
-            </button>
+            {data.buttons.primary.text && (
+              <Link href={data.buttons.primary.link}>
+                <button className="bg-[#292929] text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90 cursor-pointer">
+                  {data.buttons.primary.text}
+                </button>
               </Link>
-               
+            )}
+
+            {data.buttons.secondary.text && (
+              <Link key={data.buttons.secondary.link} href={data.buttons.secondary.link}>
+                <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition cursor-pointer">
+                  {data.buttons.secondary.text}
+                </button>
+              </Link>
+            )}
+
           </motion.div>
 
           {/* Stats + Icons */}
@@ -280,7 +284,7 @@ export default function Hero() {
             hidden sm:block
           "
         >
-          Kishor Kumar
+          {data.firstName} {data.lastName}
         </motion.div>
 
         {/* Profile Image — GSAP Floating Animation */}
@@ -293,7 +297,7 @@ export default function Hero() {
           "
         >
           <Image
-            src="/hero.png"
+            src={data.imagePath}
             alt="profile"
             width={500}
             height={700}

@@ -1,0 +1,403 @@
+{
+  "hero": {
+    "greeting": "👋 Hi, I'm",
+    "firstName": "Kishore",
+    "lastName": "Kumar",
+    "roles": "Content Strategist | Social Media Growth Specialist ",
+    "content": "Helping Brands Grow Through Content & Strategy",
+    "subContent": "Turning ideas into content that builds trust and drives growth.",
+    "imagePath": "/hero.png",
+    "buttons": {
+      "primary": {
+        "text": "View Case Studies",
+        "link": "#portfolio"
+      },
+      "secondary": {
+        "text": "",
+        "link": ""
+      }
+    },
+    "socialLinks": {
+      "linkedin": "#"
+    }
+  },
+  "focusSection": {
+    "heading": "What I Focus On",
+    "subHeading": "",
+    "items": [
+      {
+        "id": 1,
+        "title": "Content Strategy",
+        "description": "Finding the right content direction for brands instead of posting randomly.",
+        "iconName": "compass"
+      },
+      {
+        "id": 2,
+        "title": "Social Media Growth",
+        "description": "Helping brands build a stronger presence through consistent and meaningful content.",
+        "iconName": "trending-up"
+      },
+      {
+        "id": 3,
+        "title": "Script Writing",
+        "description": "Writing scripts and narratives for reels, ads, and branded content that connect with audiences.",
+        "iconName": "file-text"
+      },
+      {
+        "id": 4,
+        "title": "Brand Thinking",
+        "description": "Understanding how a brand should speak, look, and connect with its audience.",
+        "iconName": "layers"
+      }
+    ]
+  },
+  "projectsSection": {
+    "heading": "Selected Work",
+    "subHeading": "A deep dive into strategies, execution, and real-world impact.",
+    "projects": [
+      {
+        "id": 1,
+        "title": "South Indian Coffee House",
+        "tagline": "Building a stronger local brand presence through culture-driven content.",
+        "description": [
+          "The goal wasn't just to grow followers. The brand wanted to become more recognizable and memorable among people in Coimbatore while strengthening its presence on Instagram.",
+          "Instead of creating generic food content, I focused on understanding the local audience and how they emotionally connect with coffee culture.",
+          "The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.",
+          "I was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior."
+        ],
+        "videoUrl": "/videos/south-indian-coffee.mp4",
+        "results": [
+          "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
+          "Created story-driven content focused on local audience engagement",
+          "Strengthened brand awareness and recall among the target audience",
+          "Led content strategy, scripting, shoot execution, and creative planning"
+        ]
+      },
+      {
+        "id": 2,
+        "title": "South Indian Coffee House",
+        "tagline": "Building a stronger local brand presence through culture-driven content.",
+        "description": [
+          "The goal wasn't just to grow followers. The brand wanted to become more recognizable and memorable among people in Coimbatore while strengthening its presence on Instagram.",
+          "Instead of creating generic food content, I focused on understanding the local audience and how they emotionally connect with coffee culture.",
+          "The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.",
+          "I was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior."
+        ],
+        "videoUrl": "/videos/south-indian-coffee.mp4",
+        "results": [
+          "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
+          "Created story-driven content focused on local audience engagement",
+          "Strengthened brand awareness and recall among the target audience",
+          "Led content strategy, scripting, shoot execution, and creative planning"
+        ]
+      },
+      {
+        "id": 3,
+        "title": "daWg (Zebronics)",
+        "tagline": "Creating content for a gaming audience, not just promoting products.",
+        "description": [
+          "DaWg, a gaming brand from Zebronics, wanted to strengthen its presence among Indian gamers and increase product visibility through content.",
+          "Rather than creating typical product-focused posts, I worked on content concepts designed around gaming culture, audience interests, and platform behavior.",
+          "My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.",
+          "The content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness."
+        ],
+        "videoUrl": "/videos/dawg-gaming.mp4",
+        "results": [
+          "Grew the Instagram page from 35K → 45K followers",
+          "Developed content concepts tailored specifically for gaming audiences",
+          "Collaborated with designers, 3D artists, videographers, and editors",
+          "Supported product visibility through targeted Meta & Google Ads campaigns"
+        ]
+      },
+      {
+        "id": 4,
+        "title": "daWg (Zebronics)",
+        "tagline": "Creating content for a gaming audience, not just promoting products.",
+        "description": [
+          "DaWg, a gaming brand from Zebronics, wanted to strengthen its presence among Indian gamers and increase product visibility through content.",
+          "Rather than creating typical product-focused posts, I worked on content concepts designed around gaming culture, audience interests, and platform behavior.",
+          "My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.",
+          "The content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness."
+        ],
+        "videoUrl": "/videos/dawg-gaming.mp4",
+        "results": [
+          "Grew the Instagram page from 35K → 45K followers",
+          "Developed content concepts tailored specifically for gaming audiences",
+          "Collaborated with designers, 3D artists, videographers, and editors",
+          "Supported product visibility through targeted Meta & Google Ads campaigns"
+        ]
+      }
+    ]
+  },
+  "expectFromMe": {
+    "sectionSubtitle": "What You Can",
+    "sectionTitle": "Expect From Me",
+    "items": {
+      "experience": {
+        "title": "On Time Delivery",
+        "content": "I plan every project with clear timelines, realistic milestones, and structured workflows. From concept to execution, I ensure deliverables are completed on schedule without compromising creative quality. Consistency and reliability are core to how I work."
+      },
+      "education": {
+        "title": "Strategic Thinking",
+        "content": "I approach every campaign and piece of content with a strategic lens—understanding the brand objective, audience psychology, and long-term impact. Every creative decision is backed by intent, insight, and measurable purpose."
+      },
+      "skills": {
+        "title": "Clean Communication",
+        "content": "I believe strong ideas deserve clear communication. I maintain transparent discussions with clients and teams, translate complex ideas into simple narratives, and ensure alignment at every stage of execution."
+      },
+      "awards": {
+        "title": "Creative Execution",
+        "content": "From scripting reels to building brand narratives, I transform ideas into compelling visual and written content. My execution balances creativity with structure, ensuring every output serves both emotion and strategy."
+      },
+      "Quality": {
+        "title": "Quality First",
+        "content": "Quality is never an afterthought. I focus on detail, consistency, and refinement across all deliverables—because strong brands are built not on volume, but on thoughtful, well-crafted work."
+      }
+    }
+  },
+  "caseStudies": [
+    {
+      "id": 1,
+      "title": "Aryu Academy",
+      "subtitle": "Growing a coding academy from 0 to 90,000 followers through audience-first content strategy.",
+      "description": "Aryu Academy is a coding and career-focused learning platform for students in India.\n\nBefore creating content, I focused on understanding the audience. Through research and observation, I identified a common challenge among students: uncertainty about career choices, future opportunities, and the skills needed to secure good jobs.\n\nBased on these insights, I helped shape the content direction around career guidance, clarity, and value-driven education. Every piece of content was designed to address real student concerns rather than simply promote courses.\n\nMy role included content strategy, reel scripting, content planning, and creative direction.",
+      "results": [
+        "Grew the Instagram page from 0 → 90,000 followers organically in 7 months",
+        "Multiple reels crossed 2M+ views",
+        "Built a content system centered around audience psychology, consistency, and clear messaging"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "South Indian Coffee House",
+      "subtitle": "Building a stronger local brand presence through culture-driven content.",
+      "description": "The goal wasn't just to grow followers. The brand wanted to become more recognizable and memorable among people in Coimbatore while strengthening its presence on Instagram.\n\nInstead of creating generic food content, I focused on understanding the local audience and how they emotionally connect with coffee culture. The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.\n\nI was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior.",
+      "results": [
+        "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
+        "Created story-driven content focused on local audience engagement",
+        "Strengthened brand awareness and recall among the target audience",
+        "Led content strategy, scripting, shoot execution, and creative planning"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "daWg",
+      "subtitle": "Creating content for a gaming audience, not just promoting products.",
+      "description": "DaWg, a gaming brand from Zebronics, wanted to strengthen its presence among Indian gamers and increase product visibility through content.\nRather than creating typical product-focused posts, I worked on content concepts designed around gaming culture, audience interests, and platform behavior. My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.\n\nThe content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness.",
+      "results": [
+        "Grew the Instagram page from 35K → 45K followers",
+        "Developed content concepts tailored for gaming audiences",
+        "Contributed to creative direction and high-quality content production",
+        "Supported product visibility through content-led marketing campaigns"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Kadai2Manai",
+      "subtitle": "Defining how a brand should think, communicate, and position itself.",
+      "description": "Unlike my other projects, this engagement focused entirely on brand strategy.\n\nI worked closely with the team to define the brand's positioning, messaging, audience understanding, and communication direction. The result was a detailed strategy framework designed to create consistency across future marketing and brand-building efforts.",
+      "results": [
+        "Brand Positioning & Strategy",
+        "Brand Messaging Framework",
+        "Audience Understanding & Insights",
+        "Developed a comprehensive brand strategy document"
+      ]
+    }
+  ],
+  "howIApproach": {
+    "leftTitle": "How I Approach Content",
+    "steps": [
+      {
+        "title": "1. Understand the Audience",
+        "description": "Every strategy starts with understanding what people care about."
+      },
+      {
+        "title": "2. Find the Core Problem",
+        "description": "The best content solves a problem, answers a question, or creates an emotion."
+      },
+      {
+        "title": "3. Build the Content Direction",
+        "description": "I focus on creating content systems, not random posts."
+      },
+      {
+        "title": "4. Execute & Improve",
+        "description": "Content is refined through performance, feedback, and consistency."
+      }
+    ],
+    "rightTitle": "Industries I've Worked With",
+    "industries": [
+      {
+        "category": "Education",
+        "client": "Aryu Academy"
+      },
+      {
+        "category": "Food & Beverage",
+        "client": "South Indian Coffee House"
+      },
+      {
+        "category": "Gaming",
+        "client": "DaWg (Zebronics)"
+      },
+      {
+        "category": "Retail & Branding",
+        "client": "Kadai2Manai"
+      }
+    ]
+  },
+  "expertise": {
+    "leftTitle": "Areas of Expertise",
+    "leftItems": [
+      "Content Strategy",
+      "Brand Positioning",
+      "Brand Strategy"
+    ],
+    "rightTitle": "Social Media Growth",
+    "rightItems": [
+      "Content & Script Writing",
+      "Creative Ideation"
+    ]
+  },
+  "testimonials": {
+    "sectionTitle": "Testimonials",
+    "items": [
+      {
+        "quote": "This is exactly what our audience needed",
+        "author": "Client",
+        "image": "/screenshot1.png"
+      },
+      {
+        "quote": "Great strategic thinking",
+        "author": "Client",
+        "image": "/screenshot2.png"
+      },
+      {
+        "quote": "This content performed really well",
+        "author": "Client",
+        "image": "/screenshot3.png"
+      }
+    ]
+  },
+  "creativeWork": {
+    "sectionTitle": "Selective Creative Work 5 reel..",
+    "items": [
+      {
+        "title": "Reel 1",
+        "caption": "This reel generated 500+ leads",
+        "video": "/reel1.mp4"
+      },
+      {
+        "title": "Reel 2",
+        "caption": "This script got 1M views",
+        "video": "/reel2.mp4"
+      }
+    ]
+  },
+  "cta": {
+    "title": "Let's Build Something Meaningful",
+    "button": {
+      "text": "Get In Touch",
+      "link": "/contact"
+    }
+  },
+  "quote": {
+    "text": "Good content gets attention. Great strategy builds brands."
+  },
+  "footer": {
+    "left": {
+      "name": "Kishore",
+      "role": "Content Strategist | Social Media Growth Specialist",
+      "description": "Helping brands grow through content, strategy, and audience-first thinking."
+    },
+    "middle": {
+      "title": "Quick Links",
+      "links": [
+        {
+          "label": "Home",
+          "link": "/"
+        },
+        {
+          "label": "Projects",
+          "link": "#portfolio"
+        },
+        {
+          "label": "Expertise",
+          "link": "#expertise"
+        },
+        {
+          "label": "Contact",
+          "link": "/contact"
+        }
+      ]
+    },
+    "right": {
+      "title": "Connect",
+      "links": [
+        {
+          "label": "Email",
+          "link": "mailto:kishore.dmme@gmail.com"
+        },
+        {
+          "label": "Upwork",
+          "link": "#"
+        },
+        {
+          "label": "LinkedIn",
+          "link": "#"
+        }
+      ]
+    }
+  },
+  "contactSection": {
+    "title": "Kishore in One Look",
+    "oneLookDetails": [
+      {
+        "label": "Name",
+        "value": "Kishore Kumar"
+      },
+      {
+        "label": "Role",
+        "value": "Brand Strategist and Creative Professional"
+      },
+      {
+        "label": "Experience",
+        "value": "2+ Years in Branding and Digital Marketing"
+      },
+      {
+        "label": "Specialization",
+        "value": "Content Marketing, Copywriting, Scripts, Strategy"
+      },
+      {
+        "label": "Work Type",
+        "value": "Freelance and Project Based"
+      },
+      {
+        "label": "Availability",
+        "value": "Open for New Projects"
+      },
+      {
+        "label": "Email",
+        "value": "kishore.dmme@gmail.com"
+      },
+      {
+        "label": "Location",
+        "value": "Tamil Nadu, India"
+      },
+      {
+        "label": "Language",
+        "value": "English, Tamil"
+      }
+    ],
+    "cards": {
+      "left": {
+        "text": "Looking for a brand strategist and creative partner?",
+        "value": "kishore.dmme@gmail.com"
+      },
+      "right": {
+        "text": "Want to discuss a project or idea?",
+        "value": "+91-99445 13575"
+      }
+    },
+    "formTitle": "Contact Form",
+    "copyright": "©2025 Kishore Kumar. All Rights Reserved"
+  }
+}
