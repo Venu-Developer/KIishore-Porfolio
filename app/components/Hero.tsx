@@ -147,14 +147,14 @@ export default function Hero() {
   };
 
   return (
-    <section className="flex flex-col md:flex-row w-full h-[95vh] md:h-screen bg-[#F7E2D4] px-6 md:px-12 lg:px-2 overflow-hidden">
+    <section className="flex flex-col md:flex-row w-full h-[95vh] md:h-screen bg-gray-200 px-6 md:px-12 lg:px-2 overflow-hidden">
 
       {/* LEFT SIDE */}
       <motion.div
         initial={{ opacity: 0, x: -40 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}
-        className="w-full md:w-1/2 flex justify-center items-center p-5"
+        className="w-full md:w-1/2 flex justify-center items-center p-5 pt-32 md:pt-5"
       >
         <div className="z-[5] text-center md:text-left">
 
@@ -171,16 +171,16 @@ export default function Hero() {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.6, duration: 0.8 }}
-            className="relative inline-block"
+            className="relative inline-block mt-4"
           >
-            <h2 className="text-7xl font-bold text-[#292929] relative z-[2]">
+            <h2 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#292929] relative z-[2] tracking-tight">
               {data.firstName}
             </h2>
             <span
-              className="absolute inset-0 -z-[1] bg-[#F9B233] w-16 h-16 rounded-full"
+              className="absolute -top-2 -left-2 -z-[1] bg-[#F9B233] w-12 h-12 sm:w-16 sm:h-16 rounded-full opacity-80"
             ></span>
           </motion.div>
-          <motion.h2 className="text-7xl font-bold text-[#292929] flex gap-1">
+          <motion.h2 className="text-6xl sm:text-7xl lg:text-8xl font-extrabold text-[#292929] flex justify-center md:justify-start tracking-tight mt-1">
             {name.split("").map((letter, i) => (
               <motion.span
                 key={i}
@@ -278,10 +278,8 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1, duration: 1 }}
           className="
-            absolute font-bold text-[90px] leading-[90px] text-white
-            top-[30%] right-[5%] z-[2]
-            md:text-[70px] md:leading-[75px]
-            hidden sm:block
+            absolute font-bold text-[50px] leading-[50px] sm:text-[70px] sm:leading-[75px] md:text-[90px] md:leading-[90px] text-white/90
+            top-[15%] sm:top-[30%] right-[5%] sm:right-[5%] z-[2]
           "
         >
           {data.firstName} {data.lastName}
@@ -291,9 +289,9 @@ export default function Hero() {
         <div
           ref={imageRef}
           className="
-            absolute -bottom-8 right-[10%] z-[3]
-            w-[250px] sm:w-[300px] md:w-[450px]
-            h-[350px] sm:h-[450px] md:h-[550px]  hidden sm:block
+            absolute -bottom-8 right-[-5%] sm:right-[10%] z-[3]
+            w-[220px] sm:w-[300px] md:w-[450px]
+            h-[300px] sm:h-[450px] md:h-[550px]
           "
         >
           <Image
@@ -301,7 +299,7 @@ export default function Hero() {
             alt="profile"
             width={500}
             height={700}
-            className="w-full h-full object-cover hidden sm:block"
+            className="w-full h-full object-cover"
           />
         </div>
 

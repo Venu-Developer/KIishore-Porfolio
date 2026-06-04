@@ -4,6 +4,7 @@ import { CheckCircle2 } from "lucide-react";
 import portfolioData from "../../data/portfolio.json";
 import { ProjectsSectionData } from "../../types/portfolio";
 import { motion } from "framer-motion";
+import PdfViewer from "./PdfViewer";
 
 const data: ProjectsSectionData = portfolioData.projectsSection;
 
@@ -11,12 +12,12 @@ export default function ProjectsSection() {
   return (
     <section className="w-full bg-white py-24 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-24"
+          className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-6 tracking-wide">
             {data.heading}
@@ -26,22 +27,26 @@ export default function ProjectsSection() {
           </p>
         </motion.div>
 
-        <div className="space-y-32">
+        <div className="relative space-y-12 pb-32">
           {data.projects.map((project, index) => {
             const isEven = index % 2 === 0;
 
             return (
-              <div 
-                key={project.id} 
-                className={`flex flex-col-reverse gap-12 lg:gap-20 items-center ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
+              <motion.div
+                key={project.id}
+                initial={{ opacity: 0, y: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true, margin: "0px" }}
+                transition={{ duration: 0.8, type: "spring", bounce: 0.25 }}
+                className={`sticky flex flex-col-reverse gap-6 lg:gap-12 items-start lg:items-stretch bg-white border border-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} max-h-[85vh] overflow-y-auto hide-scrollbar`}
+                style={{
+                  top: `calc(10vh + ${index * 15}px)`,
+                  zIndex: index
+                } as React.CSSProperties}
               >
                 {/* Text Content */}
-                <motion.div 
-                  initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-full lg:w-1/2 flex flex-col justify-center"
+                <div
+                  className="w-full lg:w-1/2 flex flex-col justify-start py-4"
                 >
                   <h3 className="text-3xl md:text-4xl font-bold text-black mb-4">
                     {project.title}
@@ -49,7 +54,7 @@ export default function ProjectsSection() {
                   <p className="text-xl text-orange-500 italic font-medium mb-6">
                     {project.tagline}
                   </p>
-                  
+
                   <div className="space-y-4 text-gray-600 font-light leading-relaxed mb-8">
                     {project.description.map((desc, i) => (
                       <p key={i}>{desc}</p>
@@ -67,36 +72,42 @@ export default function ProjectsSection() {
                       ))}
                     </ul>
                   </div>
-                </motion.div>
+                </div>
 
                 {/* Video Container */}
-                <motion.div 
+                <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                  className="w-full lg:w-1/2 flex justify-center"
+                  transition={{ duration: 0.6, delay: 0.2 }}
+                  className="w-full lg:w-1/2 flex justify-center items-start lg:sticky lg:top-0 pt-4 pb-4"
                 >
                   <div className="relative group w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[40px] border-[12px] sm:border-[16px] border-black bg-black shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
                     <div className="relative w-full h-full rounded-[24px] sm:rounded-[28px] overflow-hidden bg-gray-900 flex items-center justify-center">
-                      {/* Video Player */}
-                      <video 
-                        className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500"
-                        autoPlay 
-                        muted 
-                        loop 
-                        playsInline
-                      >
-                        <source src={project.videoUrl} type="video/mp4" />
-                        Your browser does not support the video tag.
-                      </video>
-                      
+                      {/* Media Player (Video or Custom PDF Viewer) */}
+                      {project.videoUrl.toLowerCase().endsWith('.pdf') ? (
+                        <div className="w-full h-full bg-white relative z-10">
+                          <PdfViewer url={project.videoUrl} />
+                        </div>
+                      ) : (
+                        <video
+                          className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500"
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        >
+                          <source src={project.videoUrl} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
+                      )}
+
                       {/* Ambient Inner Glow to simulate screen bezel */}
                       <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] pointer-events-none rounded-[24px] sm:rounded-[28px]" />
                     </div>
                   </div>
                 </motion.div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

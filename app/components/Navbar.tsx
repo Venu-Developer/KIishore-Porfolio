@@ -1,76 +1,53 @@
 "use client";
 
-import { useState } from "react";
-import { FiMenu, FiX } from "react-icons/fi";
-import Link from "next/link";
+import CardNav from './CardNav';
 
 export default function Navbar() {
-  const [open, setOpen] = useState(false);
-
-  // ================= Navigation Links =================
-const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "#about" },
-  { name: "Services", href: "#services" },
-  { name: "Expect From Me", href: "#expect-from-me" },
-  // { name: "Achievements", href: "#achievements" }, // fixed spelling
-  { name: "Portfolio", href: "#portfolio" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Pricing", href: "#pricing" }, // corrected
-  // { name: "Blog", href: "#blog" },
-  { name: "Contact", href: "#contact" },
-];
+  const items = [
+    {
+      label: "About",
+      bgColor: "#F5F5F5",
+      textColor: "#000",
+      links: [
+        { label: "My Expertise", ariaLabel: "Expertise", href: "#about" },
+        { label: "What I Focus On", ariaLabel: "Focus", href: "#focus" }
+      ]
+    },
+    {
+      label: "Projects", 
+      bgColor: "#F9B233", // Orange theme
+      textColor: "#000",
+      links: [
+        { label: "Selected Work", ariaLabel: "Selected Work", href: "#projects" },
+        { label: "Case Studies", ariaLabel: "Case Studies", href: "#projects" }
+      ]
+    },
+    {
+      label: "Connect",
+      bgColor: "#000", 
+      textColor: "#fff",
+      links: [
+        { label: "Email", ariaLabel: "Email us", href: "#contact" },
+        { label: "LinkedIn", ariaLabel: "LinkedIn", href: "#contact" },
+        { label: "Pricing", ariaLabel: "Pricing", href: "#pricing" }
+      ]
+    }
+  ];
 
   return (
-    <nav className="w-full fixed top-0 left-0 z-50 bg-transparent">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex justify-end items-center h-auto py-4">
-        {/* LOGO */}
-        {/* <Link href="/" className="text-2xl font-bold text-white">
-          MyLogo
-        </Link> */}
-
-        {/* DESKTOP MENU */}
-        {/* <div className="hidden md:flex items-center gap-10">
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className="text-white hover:text-gray-200 font-medium transition"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div> */}
-
-        {/* MOBILE MENU BUTTON */}
-        {/* className="md:hidden text-3xl text-white" */}
-        <button
-          className=" text-3xl text-white bg-black p-1 rounded-md"
-          onClick={() => setOpen(!open)}
-        >
-          {open ? <FiX /> : <FiMenu />}
-        </button>
+    <div className="fixed top-0 w-full z-[100] pointer-events-none">
+      <div className="pointer-events-auto">
+        <CardNav
+          logo=""
+          logoAlt="Kishore"
+          items={items}
+          baseColor="rgba(255, 255, 255, 0.85)"
+          menuColor="#000"
+          buttonBgColor="#F9B233"
+          buttonTextColor="#000"
+          ease="power3.out"
+        />
       </div>
-
-      {/* MOBILE MENU */}
-      <div
-        className={` bg-black/60 backdrop-blur-md transition-all duration-300 overflow-hidden ${
-          open ? "max-h-auto" : "max-h-0"
-        }`}
-      >
-        <div className="flex flex-col px-6 pb-4">
-          {navLinks.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="py-3 border-b border-white/20 text-white hover:text-gray-300 font-medium"
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
-    </nav>
+    </div>
   );
 }

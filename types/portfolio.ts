@@ -130,7 +130,6 @@ export interface PortfolioData {
   focusSection: FocusSectionData;
   projectsSection: ProjectsSectionData;
   expectFromMe: ExpectFromMeData;
-  caseStudies: CaseStudyData[];
   howIApproach: HowIApproachData;
   expertise: ExpertiseData;
   testimonials: TestimonialData;

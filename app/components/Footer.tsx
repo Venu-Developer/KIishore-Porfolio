@@ -2,23 +2,31 @@
 
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowUpRight } from "lucide-react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { ArrowUpRight, Mail, Linkedin, Briefcase } from "lucide-react";
 import emailjs from "@emailjs/browser";
 import portfolioData from "../../data/portfolio.json";
-import { ContactSectionData, HeroData } from "../../types/portfolio";
+import { ContactSectionData, HeroData, FooterData } from "../../types/portfolio";
 
 const contactData: ContactSectionData = portfolioData.contactSection;
 const heroData: HeroData = portfolioData.hero;
+const footerData: FooterData = portfolioData.footer;
 
 export default function Footer() {
   const form = useRef<HTMLFormElement>(null);
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
+  const [errorMsg, setErrorMsg] = useState("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.current) return;
+
+    const fd = new FormData(form.current);
+    if (!fd.get("name") || !fd.get("email") || !fd.get("message")) {
+      setErrorMsg("Please fill out all required fields.");
+      return;
+    }
+    setErrorMsg("");
     setLoading(true);
 
     emailjs
@@ -46,37 +54,8 @@ export default function Footer() {
     <section className="bg-black text-white min-h-screen py-24 px-6">
       <div className="max-w-7xl mx-auto space-y-24">
 
-        {/* ================= Layer 1: One Look Details ================= */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="w-full"
-        >
-          <h3 className="text-3xl font-semibold mb-8 text-orange-400 text-center">
-            {contactData.title}
-          </h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-            {contactData.oneLookDetails.map((item, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.05 }}
-                className="border-b border-gray-700 pb-4"
-              >
-                <p className="text-xs uppercase tracking-widest text-gray-400 mb-1">
-                  {item.label}
-                </p>
-                <p className="text-lg font-medium">{item.value}</p>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* ================= Layer 2: Contact Cards + Form ================= */}
+        {/* ================= Layer 1: Contact Cards + Form ================= */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 p-3 md:p-10">
 
           {/* ================= Left: Contact Cards ================= */}
@@ -133,19 +112,17 @@ export default function Footer() {
             <h3 className="text-3xl font-semibold mb-6 text-orange-400 text-center">
               {contactData.formTitle}
             </h3>
-            <form ref={form} onSubmit={handleSubmit} className="space-y-4">
+            <form ref={form} onSubmit={handleSubmit} className="space-y-4" noValidate>
               <input
                 type="text"
                 name="name"
-                placeholder="Your Name"
-                required
+                placeholder="Your Name *"
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500"
               />
               <input
                 type="email"
                 name="email"
-                placeholder="Your Email"
-                required
+                placeholder="Your Email *"
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500"
               />
               <input
@@ -156,11 +133,11 @@ export default function Footer() {
               />
               <textarea
                 name="message"
-                placeholder="Your Message"
+                placeholder="Your Message *"
                 rows={5}
-                required
                 className="w-full px-4 py-3 rounded-lg bg-gray-800 border border-gray-700 focus:outline-none focus:border-orange-500 resize-none"
               />
+              {errorMsg && <p className="text-red-400 text-sm text-center">{errorMsg}</p>}
               <div className="text-center">
                 <button
                   type="submit"
@@ -182,34 +159,73 @@ export default function Footer() {
 
         </div>
 
-        {/* ================= Layer 3: Big Name + Socials ================= */}
-        <div className="text-center mt-24 space-y-6">
-          <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="text-[70px] md:text-[110px] font-extrabold text-[#f2d8c7] uppercase"
-          >
-            {heroData.firstName} {heroData.lastName}
-          </motion.h1>
+        {/* ================= Layer 3: 3-Column Footer ================= */}
+        <div className="pt-20 pb-4 border-t border-gray-800 mt-24">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
 
-          <div className="flex justify-center items-center gap-6 text-gray-400">
-            <a href={heroData.socialLinks.linkedin || "#"} target="_blank" rel="noreferrer" className="hover:text-white transition">
-              <FaLinkedin size={28} />
-            </a>
-            {/* Kept github icon for consistency but you can update in JSON if needed */}
-            <a href="#" target="_blank" rel="noreferrer" className="hover:text-white transition">
-              <FaGithub size={28} />
-            </a>
+            {/* Left: Brand / Intro */}
+            <div className="space-y-4">
+              <h2 className="text-3xl font-extrabold text-white tracking-wider uppercase">
+                {footerData.left.name}
+              </h2>
+              <p className="text-orange-400 font-medium">
+                {footerData.left.role}
+              </p>
+              <p className="text-gray-400 font-light leading-relaxed max-w-sm">
+                {footerData.left.description}
+              </p>
+            </div>
+
+            {/* Middle: Quick Links */}
+            <div className="space-y-6 md:pl-10">
+              <h3 className="text-xl font-bold text-white uppercase tracking-widest">
+                {footerData.middle.title}
+              </h3>
+              <ul className="space-y-3">
+                {footerData.middle.links.map((link, idx) => (
+                  <li key={idx}>
+                    <a href={link.link} className="text-gray-400 hover:text-orange-400 transition-colors flex items-center gap-2 group">
+                      <span className="w-1.5 h-1.5 rounded-full bg-gray-600 group-hover:bg-orange-500 transition-colors"></span>
+                      {link.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right: Connect */}
+            <div className="space-y-6 md:pl-10">
+              <h3 className="text-xl font-bold text-white uppercase tracking-widest">
+                {footerData.right.title}
+              </h3>
+              <ul className="space-y-4 mt-6">
+                {footerData.right.links.map((link, idx) => {
+                  const getIcon = () => {
+                    const l = link.label.toLowerCase();
+                    if (l.includes("linkedin")) return <Linkedin size={18} className="text-gray-500 group-hover:text-orange-400 transition-colors" />;
+                    if (l.includes("email") || l.includes("mail")) return <Mail size={18} className="text-gray-500 group-hover:text-orange-400 transition-colors" />;
+                    if (l.includes("upwork")) return <Briefcase size={18} className="text-gray-500 group-hover:text-orange-400 transition-colors" />;
+                    return <ArrowUpRight size={18} className="text-gray-500 group-hover:text-orange-400 transition-colors" />;
+                  };
+
+                  return (
+                    <li key={idx}>
+                      <a href={link.link} className="text-gray-400 hover:text-white transition-colors flex items-center gap-3 group">
+                        {getIcon()}
+                        <span className="font-medium tracking-wide">{link.label}</span>
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </div>
+
           </div>
 
-          <hr className="border-gray-700 my-10" />
-
-          <div className="flex flex-col md:flex-row justify-between text-gray-400 text-sm">
+          <div className="mt-16 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm border-t border-gray-800 pt-8">
             <p>{contactData.copyright}</p>
-            <a href="#" className="flex items-center gap-1 hover:text-white mt-4 md:mt-0 justify-center md:justify-start">
-              Back to Top <ArrowUpRight size={14} />
+            <a href="#" className="flex items-center gap-1 hover:text-orange-400 mt-4 md:mt-0 transition-colors">
+              Back to Top <ArrowUpRight size={16} />
             </a>
           </div>
         </div>

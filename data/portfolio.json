@@ -10,7 +10,7 @@
     "buttons": {
       "primary": {
         "text": "View Case Studies",
-        "link": "#portfolio"
+        "link": "#"
       },
       "secondary": {
         "text": "",
@@ -57,15 +57,15 @@
     "projects": [
       {
         "id": 1,
-        "title": "South Indian Coffee House",
-        "tagline": "Building a stronger local brand presence through culture-driven content.",
+        "title": "Aryu Academy",
+        "tagline": "Growing a coding academy from 0 to 90,000 followers through audience-first content strategy.",
         "description": [
-          "The goal wasn't just to grow followers. The brand wanted to become more recognizable and memorable among people in Coimbatore while strengthening its presence on Instagram.",
-          "Instead of creating generic food content, I focused on understanding the local audience and how they emotionally connect with coffee culture.",
-          "The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.",
-          "I was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior."
+          "Aryu Academy is a coding and career-focused learning platform for students in India.",
+          "Before creating content, I focused on understanding the audience. Through research and observation, I identified a common challenge among students: uncertainty about career choices, future opportunities, and the skills needed to secure good jobs.",
+          "Based on these insights, I helped shape the content direction around career guidance, clarity, and value-driven education. Every piece of content was designed to address real student concerns rather than simply promote courses.",
+          "My role included content strategy, reel scripting, content planning, and creative direction."
         ],
-        "videoUrl": "/videos/south-indian-coffee.mp4",
+        "videoUrl": "/Videos/Aryu-Academy.mp4",
         "results": [
           "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
           "Created story-driven content focused on local audience engagement",
@@ -83,7 +83,7 @@
           "The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.",
           "I was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior."
         ],
-        "videoUrl": "/videos/south-indian-coffee.mp4",
+        "videoUrl": "/Videos/south-indian-coffee.mp4",
         "results": [
           "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
           "Created story-driven content focused on local audience engagement",
@@ -101,7 +101,7 @@
           "My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.",
           "The content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness."
         ],
-        "videoUrl": "/videos/dawg-gaming.mp4",
+        "videoUrl": "/Videos/dawg-gaming.mp4",
         "results": [
           "Grew the Instagram page from 35K → 45K followers",
           "Developed content concepts tailored specifically for gaming audiences",
@@ -111,20 +111,18 @@
       },
       {
         "id": 4,
-        "title": "daWg (Zebronics)",
-        "tagline": "Creating content for a gaming audience, not just promoting products.",
+        "title": "Kadai2Manai",
+        "tagline": "Defining how a brand should think, communicate, and position itself. ",
         "description": [
-          "DaWg, a gaming brand from Zebronics, wanted to strengthen its presence among Indian gamers and increase product visibility through content.",
-          "Rather than creating typical product-focused posts, I worked on content concepts designed around gaming culture, audience interests, and platform behavior.",
-          "My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.",
-          "The content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness."
+          "Unlike my other projects, this engagement focused entirely on brand strategy.",
+          "I worked closely with the team to define the brand's positioning, messaging, audience understanding, and communication direction. The result was a detailed strategy framework designed to create consistency across future marketing and brand-building efforts."
         ],
-        "videoUrl": "/videos/dawg-gaming.mp4",
+        "videoUrl": "/Kadai2Manai.pdf",
         "results": [
-          "Grew the Instagram page from 35K → 45K followers",
-          "Developed content concepts tailored specifically for gaming audiences",
-          "Collaborated with designers, 3D artists, videographers, and editors",
-          "Supported product visibility through targeted Meta & Google Ads campaigns"
+          "Brand Positioning & Strategy",
+          "Brand Messaging Framework ",
+          "Audience Understanding & Insights ",
+          "Developed a comprehensive brand strategy document "
         ]
       }
     ]
@@ -155,55 +153,6 @@
       }
     }
   },
-  "caseStudies": [
-    {
-      "id": 1,
-      "title": "Aryu Academy",
-      "subtitle": "Growing a coding academy from 0 to 90,000 followers through audience-first content strategy.",
-      "description": "Aryu Academy is a coding and career-focused learning platform for students in India.\n\nBefore creating content, I focused on understanding the audience. Through research and observation, I identified a common challenge among students: uncertainty about career choices, future opportunities, and the skills needed to secure good jobs.\n\nBased on these insights, I helped shape the content direction around career guidance, clarity, and value-driven education. Every piece of content was designed to address real student concerns rather than simply promote courses.\n\nMy role included content strategy, reel scripting, content planning, and creative direction.",
-      "results": [
-        "Grew the Instagram page from 0 → 90,000 followers organically in 7 months",
-        "Multiple reels crossed 2M+ views",
-        "Built a content system centered around audience psychology, consistency, and clear messaging"
-      ]
-    },
-    {
-      "id": 2,
-      "title": "South Indian Coffee House",
-      "subtitle": "Building a stronger local brand presence through culture-driven content.",
-      "description": "The goal wasn't just to grow followers. The brand wanted to become more recognizable and memorable among people in Coimbatore while strengthening its presence on Instagram.\n\nInstead of creating generic food content, I focused on understanding the local audience and how they emotionally connect with coffee culture. The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.\n\nI was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior.",
-      "results": [
-        "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
-        "Created story-driven content focused on local audience engagement",
-        "Strengthened brand awareness and recall among the target audience",
-        "Led content strategy, scripting, shoot execution, and creative planning"
-      ]
-    },
-    {
-      "id": 3,
-      "title": "daWg",
-      "subtitle": "Creating content for a gaming audience, not just promoting products.",
-      "description": "DaWg, a gaming brand from Zebronics, wanted to strengthen its presence among Indian gamers and increase product visibility through content.\nRather than creating typical product-focused posts, I worked on content concepts designed around gaming culture, audience interests, and platform behavior. My role involved content strategy, creative ideation, scripting, and collaborating with designers, 3D artists, videographers, and editors to produce high-quality content that felt relevant to the gaming community.\n\nThe content was further amplified through Meta Ads and Google Ads campaigns to expand reach and support product awareness.",
-      "results": [
-        "Grew the Instagram page from 35K → 45K followers",
-        "Developed content concepts tailored for gaming audiences",
-        "Contributed to creative direction and high-quality content production",
-        "Supported product visibility through content-led marketing campaigns"
-      ]
-    },
-    {
-      "id": 4,
-      "title": "Kadai2Manai",
-      "subtitle": "Defining how a brand should think, communicate, and position itself.",
-      "description": "Unlike my other projects, this engagement focused entirely on brand strategy.\n\nI worked closely with the team to define the brand's positioning, messaging, audience understanding, and communication direction. The result was a detailed strategy framework designed to create consistency across future marketing and brand-building efforts.",
-      "results": [
-        "Brand Positioning & Strategy",
-        "Brand Messaging Framework",
-        "Audience Understanding & Insights",
-        "Developed a comprehensive brand strategy document"
-      ]
-    }
-  ],
   "howIApproach": {
     "leftTitle": "How I Approach Content",
     "steps": [
@@ -325,7 +274,7 @@
         },
         {
           "label": "Contact",
-          "link": "/contact"
+          "link": "#contact"
         }
       ]
     },
