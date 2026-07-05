@@ -27,11 +27,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        // className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        className={syne.className}
-      >
-        {children}
+      <body className={syne.className}>
+        <div className="w-full overflow-x-hidden relative flex flex-col min-h-screen">
+          {children}
+        </div>
       </body>
     </html>
   );
