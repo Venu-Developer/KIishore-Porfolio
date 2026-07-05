@@ -49,14 +49,14 @@ export default function AboutPage() {
           transition={{ duration: 0.8 }}
           className="flex justify-center lg:justify-end"
         >
-          <div className="w-full max-w-md rounded-xl overflow-hidden shadow-lg">
-            <Image
-              src="/images/profile.jpg" // replace with your photo
-              alt="Kishore Kumar"
-              width={400}
-              height={500}
-              className="object-cover rounded-xl"
-              priority
+          <div className="w-full max-w-md rounded-xl overflow-hidden shadow-2xl bg-black">
+            <video
+              src="/Videos/asst-director.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="w-full h-full object-cover rounded-xl"
             />
           </div>
         </motion.div>

@@ -56,9 +56,9 @@ export default function ExpertiseSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="w-full md:w-1/2"
         >
-          <div className="mb-12 md:pl-8">
+          <div className={`mb-12 md:pl-8 ${!data.rightTitle ? 'invisible hidden md:block' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-extrabold text-black mb-4 tracking-wide">
-              {data.rightTitle}
+              {data.rightTitle || 'Placeholder'}
             </h2>
             <div className="w-20 h-1.5 bg-orange-500 rounded-full"></div>
           </div>

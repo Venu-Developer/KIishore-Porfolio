@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import AboutPage from "./components/About";
 import FocusSection from "./components/FocusSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ZigZagSection from "./components/ZigZagSection";
 import ApproachSection from "./components/ApproachSection";
 import ExpertiseSection from "./components/ExpertiseSection";
 
@@ -24,6 +25,11 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects">
         <ProjectsSection />
+      </section>
+
+      {/* Zig Zag Section */}
+      <section id="creative-work">
+        <ZigZagSection />
       </section>
 
       {/* Approach Section */}
@@ -44,11 +50,6 @@ export default function Home() {
 
 
 
-
-      {/* Pricing Section */}
-      <section id="pricing">
-        <PricingSection />
-      </section>
 
       {/* Blog Section */}
       {/* <section id="blog">

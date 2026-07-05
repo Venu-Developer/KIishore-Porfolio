@@ -38,11 +38,7 @@ export default function ProjectsSection() {
                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
                 viewport={{ once: true, margin: "0px" }}
                 transition={{ duration: 0.8, type: "spring", bounce: 0.25 }}
-                className={`sticky flex flex-col-reverse gap-6 lg:gap-12 items-start lg:items-stretch bg-white border border-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} max-h-[85vh] overflow-y-auto hide-scrollbar`}
-                style={{
-                  top: `calc(10vh + ${index * 15}px)`,
-                  zIndex: index
-                } as React.CSSProperties}
+                className={`relative flex flex-col-reverse gap-6 lg:gap-12 items-start lg:items-stretch bg-white border border-gray-100 shadow-[0_12px_40px_rgba(0,0,0,0.06)] rounded-[2rem] lg:rounded-[2.5rem] p-6 sm:p-10 lg:p-12 ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}
               >
                 {/* Text Content */}
                 <div
@@ -84,11 +80,17 @@ export default function ProjectsSection() {
                 >
                   <div className="relative group w-full max-w-[280px] sm:max-w-[320px] aspect-[9/16] rounded-[40px] border-[12px] sm:border-[16px] border-black bg-black shadow-2xl overflow-hidden transform hover:-translate-y-2 transition-transform duration-500">
                     <div className="relative w-full h-full rounded-[24px] sm:rounded-[28px] overflow-hidden bg-gray-900 flex items-center justify-center">
-                      {/* Media Player (Video or Custom PDF Viewer) */}
+                      {/* Media Player (Video, Image, or Custom PDF Viewer) */}
                       {project.videoUrl.toLowerCase().endsWith('.pdf') ? (
                         <div className="w-full h-full bg-white relative z-10">
                           <PdfViewer url={project.videoUrl} />
                         </div>
+                      ) : project.videoUrl.toLowerCase().match(/\.(jpeg|jpg|gif|png|webp)$/) ? (
+                        <img
+                          src={project.videoUrl}
+                          alt={project.title}
+                          className="w-full h-full object-cover relative z-10"
+                        />
                       ) : (
                         <video
                           className="w-full h-full object-cover opacity-95 group-hover:opacity-100 transition-opacity duration-500"

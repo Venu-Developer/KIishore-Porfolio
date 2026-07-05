@@ -83,7 +83,7 @@
           "The content strategy was built around familiar situations, relatable storytelling, and the idea that coffee naturally reminds people of South Indian Coffee House.",
           "I was involved in content strategy, script writing, shoot execution, and creative direction, ensuring every piece of content aligned with the brand's identity and audience behavior."
         ],
-        "videoUrl": "/Videos/south-indian-coffee.mp4",
+        "videoUrl": "/South-Indian-coffee-house.jpeg",
         "results": [
           "Grew the Instagram page from 1,500 → 16,000 followers organically in 6 months",
           "Created story-driven content focused on local audience engagement",
@@ -124,6 +124,24 @@
           "Audience Understanding & Insights ",
           "Developed a comprehensive brand strategy document "
         ]
+      }
+    ]
+  },
+  "zigZagSection": {
+    "heading": "Creative Work",
+    "subHeading": "A look at some of the key content pieces I've directed.",
+    "items": [
+      {
+        "id": 1,
+        "title": "",
+        "description": "Recently we shot the product advertising for a client who wanted to showcase their items in high quality on their shop’s TV screens. Our team focused on artistic macro shots to bring the product’s natural essence to life, ensuring a polished and professional look that commands attention in any retail space.",
+        "videoUrl": "/Videos/Breath-New.mp4"
+      },
+      {
+        "id": 2,
+        "title": "Behind the Scenes: Aryu Academy",
+        "description": "This BTS shows my role in directing for Aryu Academy. My process goes far beyond just shooting. I take ownership from crafting the script and directing the shoot to guiding the edit, ensuring every detail reflects the brand's vision. This hands-on approach delivers high-quality results, leading to exceptional engagement and reach on Instagram.",
+        "videoUrl": "/Videos/aryu-portfolio-shhot.mp4"
       }
     ]
   },
@@ -200,8 +218,9 @@
       "Brand Positioning",
       "Brand Strategy"
     ],
-    "rightTitle": "Social Media Growth",
+    "rightTitle": "",
     "rightItems": [
+      "Social Media Growth",
       "Content & Script Writing",
       "Creative Ideation"
     ]
@@ -265,16 +284,20 @@
           "link": "/"
         },
         {
-          "label": "Projects",
-          "link": "#portfolio"
+          "label": "Selected Work",
+          "link": "#projects"
+        },
+        {
+          "label": "Creative Work",
+          "link": "#creative-work"
         },
         {
           "label": "Expertise",
           "link": "#expertise"
         },
         {
-          "label": "Contact",
-          "link": "#contact"
+          "label": "About Me",
+          "link": "#about"
         }
       ]
     },
@@ -286,12 +309,8 @@
           "link": "mailto:kishore.dmme@gmail.com"
         },
         {
-          "label": "Upwork",
-          "link": "#"
-        },
-        {
           "label": "LinkedIn",
-          "link": "#"
+          "link": "https://www.linkedin.com/in/kishore-kumar-a9296a16b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
         }
       ]
     }

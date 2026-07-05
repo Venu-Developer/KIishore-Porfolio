@@ -9,8 +9,9 @@ export default function Navbar() {
       bgColor: "#F5F5F5",
       textColor: "#000",
       links: [
-        { label: "My Expertise", ariaLabel: "Expertise", href: "#about" },
-        { label: "What I Focus On", ariaLabel: "Focus", href: "#focus" }
+        { label: "My Expertise", ariaLabel: "Expertise", href: "#expertise" },
+        { label: "What I Focus On", ariaLabel: "Focus", href: "#focus" },
+        { label: "About Me", ariaLabel: "About", href: "#about" }
       ]
     },
     {
@@ -19,7 +20,7 @@ export default function Navbar() {
       textColor: "#000",
       links: [
         { label: "Selected Work", ariaLabel: "Selected Work", href: "#projects" },
-        { label: "Case Studies", ariaLabel: "Case Studies", href: "#projects" }
+        { label: "Creative Work", ariaLabel: "Creative Work", href: "#creative-work" }
       ]
     },
     {
@@ -27,9 +28,9 @@ export default function Navbar() {
       bgColor: "#000", 
       textColor: "#fff",
       links: [
-        { label: "Email", ariaLabel: "Email us", href: "#contact" },
-        { label: "LinkedIn", ariaLabel: "LinkedIn", href: "#contact" },
-        { label: "Pricing", ariaLabel: "Pricing", href: "#pricing" }
+        { label: "Email", ariaLabel: "Email us", href: "mailto:kishore.dmme@gmail.com" },
+        { label: "LinkedIn", ariaLabel: "LinkedIn", href: "https://www.linkedin.com/in/kishore-kumar-a9296a16b" },
+        { label: "Contact Form", ariaLabel: "Contact Form", href: "#contact" }
       ]
     }
   ];
