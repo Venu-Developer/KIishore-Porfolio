@@ -216,20 +216,20 @@ export default function Hero() {
             className="mt-10 flex gap-6 justify-center md:justify-start flex-wrap"
           >
             {data.buttons.primary.text && (
-              <Link href={data.buttons.primary.link}>
-                <button className="bg-[#292929] text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90 cursor-pointer">
-                  {data.buttons.primary.text}
-                </button>
-              </Link>
+              // <Link href={data.buttons.primary.link}>
+              <div className="bg-[#292929] text-white px-8 py-3 rounded-xl text-lg font-semibold hover:opacity-90">
+                {data.buttons.primary.text}
+              </div>
+              // </Link>
             )}
 
-            {data.buttons.secondary.text && (
+            {/* {data.buttons.secondary.text && (
               <Link key={data.buttons.secondary.link} href={data.buttons.secondary.link}>
                 <button className="border border-black px-8 py-3 rounded-xl text-lg font-semibold text-black hover:bg-black hover:text-white transition cursor-pointer">
                   {data.buttons.secondary.text}
                 </button>
               </Link>
-            )}
+            )} */}
 
           </motion.div>
 
@@ -246,12 +246,7 @@ export default function Hero() {
               <span className="text-sm">Worldwide Clients</span> */}
             {/* </p> */}
 
-            <div className="flex gap-4 items-center text-3xl bg-yellow-400 rounded-full p-3">
-              {/* <FaBehance className="cursor-pointer hover:text-blue-600 duration-200" /> */}
-              <FaLinkedinIn className="cursor-pointer hover:text-blue-700 duration-200" />
-              {/* <FaDribbble className="cursor-pointer hover:text-pink-500 duration-200" />
-              <FaGithub className="cursor-pointer hover:text-gray-700 duration-200" /> */}
-            </div>
+
           </motion.div>
 
         </div>
